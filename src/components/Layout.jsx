@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useRef, useState } from 'react'
+import { cloneElement, useEffect, useRef } from 'react'
 import { useLocation, useOutlet } from 'react-router'
 import { AnimatePresence, motion } from 'motion/react'
 import Header from './Header'
@@ -27,7 +27,7 @@ function scrollToHash(lenis, hash, immediate) {
 }
 
 /** Wraps each route: a graphite curtain sweeps over on exit and lifts on enter. */
-function PageShell({ children, isInitial = false }) {
+function PageShell({ children }) {
   const location = useLocation()
   const lenis = useLenis()
   const label = routeLabel(location.pathname)
@@ -39,14 +39,6 @@ function PageShell({ children, isInitial = false }) {
     return () => clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  if (isInitial) {
-    return (
-      <main id="main">
-        {children}
-      </main>
-    )
-  }
 
   return (
     <>
@@ -80,20 +72,11 @@ function PageShell({ children, isInitial = false }) {
   )
 }
 
-let isFirstLoad = true
-
 export default function Layout() {
   const location = useLocation()
   const outlet = useOutlet()
   const lenis = useLenis()
   const prevPath = useRef(location.pathname)
-  const [initial] = useState(() => {
-    if (isFirstLoad) {
-      isFirstLoad = false
-      return true
-    }
-    return false
-  })
 
   useEffect(() => {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
@@ -116,7 +99,7 @@ export default function Layout() {
       <Header />
       <AnimatePresence mode="wait" onExitComplete={() => scrollToTarget(lenis, 0, { immediate: true })}>
         {outlet && (
-          <PageShell key={location.pathname} isInitial={initial}>
+          <PageShell key={location.pathname}>
             {cloneElement(outlet)}
           </PageShell>
         )}
