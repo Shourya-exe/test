@@ -51,3 +51,4 @@ npm run lint
 
 - **Google Sheets Integration**:
   - Full instructions provided in [`GOOGLE_SHEETS_SETUP.md`](./GOOGLE_SHEETS_SETUP.md) for automated webhook and Google Cloud Service Account modes.
+
