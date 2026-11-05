@@ -1,0 +1,40 @@
+[
+  {
+    "id": "INQ-1793905405521",
+    "timestamp": "2026-11-05 19:03:25",
+    "name": "Automated Verifier",
+    "email": "verifier@redefiningarchitecture.com",
+    "phone": "+91 98364 21375",
+    "message": "All endpoints verified successfully.",
+    "googleSheetSynced": false
+  },
+  {
+    "id": "INQ-1793904449692",
+    "timestamp": "2026-11-05 18:47:29",
+    "name": "Automated Verifier",
+    "email": "verifier@redefiningarchitecture.com",
+    "phone": "+91 98364 21375",
+    "message": "All endpoints verified successfully.",
+    "googleSheetSynced": false
+  },
+  {
+    "id": "INQ-1793904436030",
+    "timestamp": "2026-11-05 18:47:16",
+    "name": "Shourya Kumar",
+    "email": "shourya.cyclist@gmail.com",
+    "phone": "1234567890",
+    "projectType": "Architecture",
+    "location": "kolkata",
+    "message": "3 BHK lake side view",
+    "googleSheetSynced": false
+  },
+  {
+    "id": "INQ-1793904378337",
+    "timestamp": "2026-11-05 18:46:18",
+    "name": "Mr. Rajesh Sen",
+    "email": "rajesh.sen@example.com",
+    "phone": "+91 98310 12345",
+    "message": "Interested in developing a sustainable residence in Kolkata.",
+    "googleSheetSynced": false
+  }
+]
