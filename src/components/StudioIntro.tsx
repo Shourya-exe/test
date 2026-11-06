@@ -95,8 +95,8 @@ export default function StudioIntro() {
             {/* Primary Image Frame */}
             <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden border border-[#262420] group">
               <Image
-                src="/images/projects/the-duet/cover.jpg"
-                alt="Architectural facade of The Duet, Kolkata"
+                src="/images/all-images/img-5.jpg"
+                alt="Architectural facade of Luxury 16 Storey Residency, Ballygunge, Kolkata"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -109,13 +109,13 @@ export default function StudioIntro() {
                     Featured High-Rise
                   </span>
                   <h3 className="text-lg font-serif font-medium text-[#F7F5F0]">
-                    The Duet · Ballygunge
+                    Luxury 16 Storey Residency · Ballygunge
                   </h3>
                 </div>
                 <Link
                   href="/projects/the-duet-ballygunge"
                   className="px-3.5 py-1.5 bg-[#0D0C0B]/90 backdrop-blur-sm border border-[#C5A85C]/60 text-[10px] uppercase tracking-widest text-[#F7F5F0] hover:bg-[#C5A85C] hover:text-[#0D0C0B] transition-colors"
-                  aria-label="View The Duet project details"
+                  aria-label="View Luxury 16 Storey Residency project details"
                 >
                   View Details
                 </Link>

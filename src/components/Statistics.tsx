@@ -9,56 +9,55 @@ interface CounterProps {
   duration?: number;
 }
 
-function AnimatedCounter({ finalValue, suffix = "", duration = 1800 }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const [inView, setInView] = useState(false);
+function AnimatedCounter({ finalValue, suffix = "", duration = 1400 }: CounterProps) {
+  const containerRef = useRef<HTMLSpanElement>(null);
+  const numRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
+    const el = containerRef.current;
     if (!el) return;
+
+    let animationFrameId: number;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true);
           observer.disconnect();
+          let startTime: number | null = null;
+
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(easedProgress * finalValue);
+
+            if (numRef.current) {
+              numRef.current.textContent = String(currentVal);
+            }
+
+            if (progress < 1) {
+              animationFrameId = requestAnimationFrame(animate);
+            } else if (numRef.current) {
+              numRef.current.textContent = String(finalValue);
+            }
+          };
+
+          animationFrameId = requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!inView) return;
-
-    let startTime: number | null = null;
-    let animationFrameId: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      // Ease out cubic
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easedProgress * finalValue));
-
-      if (progress < 1) {
-        animationFrameId = requestAnimationFrame(animate);
-      } else {
-        setCount(finalValue);
-      }
+    return () => {
+      observer.disconnect();
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [inView, finalValue, duration]);
+  }, [finalValue, duration]);
 
   return (
-    <span ref={ref} className="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F7F5F0]">
-      {count}
+    <span ref={containerRef} className="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F7F5F0]">
+      <span ref={numRef}>0</span>
       <span className="text-[#C5A85C] ml-0.5">{suffix}</span>
     </span>
   );

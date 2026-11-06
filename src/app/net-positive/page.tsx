@@ -47,24 +47,24 @@ export default function NetPositivePage() {
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-[1px] bg-[#C5A85C]" />
             <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
-              Philosophy · Ecological Net Positivity
+              Philosophy · Beyond Sustainability
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#F7F5F0] tracking-tight mb-4">
-            Net Positive
+            Beyond Sustainability
           </h1>
 
           <p className="text-base sm:text-lg text-[#858178] max-w-3xl leading-relaxed">
-            Going beyond zero-carbon neutrality to design regenerative built environments that give back more clean energy, fresh water, and biodiversity than they consume.
+            Creating regenerative spaces that restore nature, conserve resources and enhance the quality of life for generations to come.
           </p>
         </div>
 
         {/* Hero Visual */}
         <div className="relative aspect-[21/9] min-h-[320px] w-full overflow-hidden border border-[#262420] mb-20 bg-[#141311]">
           <Image
-            src="/images/hero/slide-4-puri.jpg"
-            alt="Net positive sustainable architecture"
+            src="/images/all-images/img-17.jpg"
+            alt="Beyond Sustainability regenerative architecture"
             fill
             priority
             sizes="100vw"

@@ -69,6 +69,12 @@ export default function RootLayout({
           name="description"
           content="Buildings shaped by climate, city, and the people who use them. High-end luxury residences, healthcare complexes, master planning, and sustainable architecture across Kolkata and Bhubaneswar."
         />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/all-images/img-1.jpg"
+          fetchPriority="high"
+        />
       </head>
       <body className="min-h-screen bg-[#0D0C0B] text-[#F7F5F0] flex flex-col antialiased selection:bg-[#C5A85C] selection:text-[#0D0C0B]">
         <Header />

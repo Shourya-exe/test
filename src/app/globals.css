@@ -68,6 +68,20 @@ body {
   transform: rotateY(180deg);
 }
 
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-12deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
 /* Cinematic Mask & Image Zoom Utilities */
 .mask-hero {
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);

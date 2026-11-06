@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, X, Phone, Mail, MapPin } from "lucide-react";
 import { STUDIO_DATA } from "@/data/studio";
 
 const NAV_LINKS = [
-  { label: "Net Positive", href: "/net-positive", number: "01" },
+  { label: "Beyond Sustainability", href: "/beyond-sustainability", number: "01" },
   { label: "Our Projects", href: "/projects", number: "02" },
   { label: "Who We Are", href: "/who-we-are", number: "03" },
   { label: "Design R+I", href: "/design", number: "04" },
@@ -25,8 +26,16 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldScroll = window.scrollY > 40;
+          setIsScrolled((prev) => (prev !== shouldScroll ? shouldScroll : prev));
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -63,11 +72,15 @@ export default function Header() {
             className="flex items-center gap-3.5 group focus:outline-none"
             aria-label="Redefining Architecture Home"
           >
-            <div className="relative w-10 h-10 border border-[#C5A85C]/60 flex items-center justify-center transition-all duration-300 group-hover:border-[#C5A85C] group-hover:bg-[#C5A85C]/10">
-              <span className="font-serif text-sm font-bold tracking-widest text-[#F7F5F0]">
-                RA
-              </span>
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#C5A85C]" />
+            <div className="relative w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/images/logo.png"
+                alt="Redefining Architecture Logo"
+                width={40}
+                height={40}
+                priority
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#F7F5F0] transition-colors group-hover:text-[#C5A85C]">
@@ -166,8 +179,14 @@ export default function Header() {
               {/* Drawer Top Header */}
               <div className="flex items-center justify-between border-b border-[#262420] pb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 border border-[#C5A85C] flex items-center justify-center">
-                    <span className="font-serif text-xs font-bold text-[#C5A85C]">RA</span>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <Image
+                      src="/images/logo.png"
+                      alt="RA Logo"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 object-contain"
+                    />
                   </div>
                   <span className="text-[11px] uppercase tracking-[0.24em] text-[#969188]">
                     Navigation Menu
@@ -231,7 +250,7 @@ export default function Header() {
                       Bhubaneswar Studio
                     </span>
                     <p className="text-[11px] leading-relaxed text-[#B5B0A6]">
-                      66 Bidhanagar, Bhubaneswar 751006
+                      Bhubaneswar, Odisha 751006
                     </p>
                   </div>
                 </div>

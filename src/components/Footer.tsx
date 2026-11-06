@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import { STUDIO_DATA } from "@/data/studio";
 
@@ -18,10 +19,14 @@ export default function Footer() {
               className="inline-flex items-center gap-3.5 group focus:outline-none"
               aria-label="Redefining Architecture Home"
             >
-              <div className="w-10 h-10 border border-[#C5A85C]/80 flex items-center justify-center transition-colors group-hover:border-[#C5A85C] group-hover:bg-[#C5A85C]/10">
-                <span className="font-serif text-sm font-bold tracking-widest text-[#F7F5F0]">
-                  RA
-                </span>
+              <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/images/logo.png"
+                  alt="Redefining Architecture Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#F7F5F0]">
@@ -49,8 +54,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-xs text-[#A8A398]">
               <li>
-                <Link href="/net-positive" className="hover:text-[#F7F5F0] transition-colors">
-                  Net Positive
+                <Link href="/beyond-sustainability" className="hover:text-[#F7F5F0] transition-colors">
+                  Beyond Sustainability
                 </Link>
               </li>
               <li>
@@ -124,7 +129,7 @@ export default function Footer() {
                   Bhubaneswar Studio
                 </span>
                 <p className="leading-relaxed text-[#A8A398]">
-                  66 Bidhanagar, Bhubaneswar, Odisha 751006
+                  Bhubaneswar, Odisha 751006
                 </p>
                 <a
                   href="tel:+919836421375"

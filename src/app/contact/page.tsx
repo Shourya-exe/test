@@ -120,7 +120,7 @@ export default function ContactPage() {
               </div>
 
               <p className="text-xs text-[#B5B0A6] leading-relaxed">
-                66 Bidhanagar, Bhubaneswar, Odisha 751006
+                Bhubaneswar, Odisha 751006
               </p>
 
               <div className="pt-2 flex flex-col space-y-2 text-xs text-[#969188]">

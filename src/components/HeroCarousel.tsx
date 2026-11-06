@@ -21,92 +21,172 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "01",
     number: "01",
-    title: "THE BEST POINT",
-    subtitle: "IS RISING FOR BETTER",
-    category: "Residential: High-End Luxury",
-    location: "Ballygunge, Kolkata",
-    image: "/images/hero/slide-1-duet.jpg",
-    projectSlug: "the-duet-ballygunge",
+    title: "AUTOHUB SHOWROOM",
+    subtitle: "SCULPTURAL COMMERCIAL EXCELLENCE",
+    category: "Mixed Commercial",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-1.jpg",
+    projectSlug: "autohub-corporate",
   },
   {
     id: "02",
     number: "02",
-    title: "DESIGN",
-    subtitle: "DRIVEN WITH PURPOSE",
-    category: "Tertiary Healthcare",
-    location: "Bhubaneswar, Odisha",
-    image: "/images/hero/slide-2-hospital.jpg",
-    projectSlug: "medical-college-bhubaneswar",
+    title: "42 STORIED LUXURY RESIDENCE",
+    subtitle: "CURVILINEAR AERODYNAMIC GRANDEUR",
+    category: "Residential: High-End Luxury",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-2.jpg",
+    projectSlug: "the-curve-residences",
   },
   {
     id: "03",
     number: "03",
-    title: "PORTAL",
-    subtitle: "TO LIFE IN MOTION",
-    category: "Interiors Architecture",
+    title: "FLUID HORIZONS",
+    subtitle: "CONTINUOUS PANORAMIC BALCONIES",
+    category: "Residential: High-End Luxury",
     location: "Kolkata, West Bengal",
-    image: "/images/hero/slide-3-reception.jpg",
-    projectSlug: "high-end-club-interiors",
+    image: "/images/all-images/img-3.jpg",
+    projectSlug: "the-curve-residences",
   },
   {
     id: "04",
     number: "04",
-    title: "CREATING",
-    subtitle: "SUSTAINABLE SPACES",
-    category: "Coastal Healthcare",
-    location: "Puri, Odisha",
-    image: "/images/hero/slide-4-puri.jpg",
-    projectSlug: "puri-diagnostic-centre",
+    title: "ICONIC PODIUM",
+    subtitle: "LANDSCAPED SKY SANCTUARY",
+    category: "Residential: High-End Luxury",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-4.webp",
+    projectSlug: "the-curve-residences",
   },
   {
     id: "05",
     number: "05",
-    title: "CANVAS",
-    subtitle: "CRAFTING SUSTAINABILITY",
-    category: "Hospitality & Wellness",
-    location: "Kolkata, West Bengal",
-    image: "/images/hero/slide-5-club.jpg",
-    projectSlug: "high-end-club-interiors",
+    title: "LUXURY 16 STOREY RESIDENCY",
+    subtitle: "TOWERING ELEGANCE AT BALLYGUNGE",
+    category: "Residential: High-End Luxury",
+    location: "Ballygunge, Kolkata",
+    image: "/images/all-images/img-5.jpg",
+    projectSlug: "the-duet-ballygunge",
   },
   {
     id: "06",
     number: "06",
-    title: "LEGACY",
-    subtitle: "STORY ENDURING ELEGANCE",
-    category: "Waterfront Private Villa",
-    location: "Murshidabad, West Bengal",
-    image: "/images/hero/slide-6-villa.jpg",
-    projectSlug: "dhuliyan-luxury-villa",
+    title: "SUNCREST TOWERS",
+    subtitle: "CONTEMPORARY URBAN HIGH-RISE",
+    category: "Residential: High-End Luxury",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-6.jpg",
+    projectSlug: "the-duet-ballygunge",
   },
   {
     id: "07",
     number: "07",
-    title: "REVIVAL",
-    subtitle: "HERITAGE REIMAGINED",
-    category: "Civic & Hospitality",
-    location: "Kolkata, West Bengal",
-    image: "/images/hero/slide-7-exhibition.jpg",
-    projectSlug: "kolkata-exhibition-centre",
+    title: "SUNCREST VILLA",
+    subtitle: "SEAMLESS INDOOR-OUTDOOR LIVING",
+    category: "Villas",
+    location: "West Bengal",
+    image: "/images/all-images/img-7.jpg",
+    projectSlug: "private-villas-and-farm-house",
   },
   {
     id: "08",
     number: "08",
-    title: "TRANSFORMING",
-    subtitle: "DREAMS INTO REALITY",
-    category: "Curvilinear Luxury High-Rise",
+    title: "EXHIBITION & CONVENTION",
+    subtitle: "MONUMENTAL COLUMN-FREE SPACES",
+    category: "Civic & Hospitality",
     location: "Kolkata, West Bengal",
-    image: "/images/hero/slide-8-curve.jpg",
-    projectSlug: "the-curve-residences",
+    image: "/images/all-images/img-8.jpg",
+    projectSlug: "kolkata-exhibition-centre",
   },
   {
     id: "09",
     number: "09",
-    title: "ESCAPE",
-    subtitle: "PEACE REDEFINED IN LUXURY",
-    category: "Night Elevation Architecture",
-    location: "Ballygunge, Kolkata",
-    image: "/images/hero/slide-9-night.jpg",
-    projectSlug: "the-duet-ballygunge",
+    title: "TEACHING HOSPITAL CAMPUS",
+    subtitle: "CLINICAL EXCELLENCE & HEALING",
+    category: "Health Care",
+    location: "Phulbani & Koraput, Odisha",
+    image: "/images/all-images/img-9.jpg",
+    projectSlug: "medical-college-bhubaneswar",
+  },
+  {
+    id: "10",
+    number: "10",
+    title: "WATERFRONT VILLA",
+    subtitle: "TROPICAL MINIMALISM BY THE RIVER",
+    category: "Villas",
+    location: "Murshidabad, West Bengal",
+    image: "/images/all-images/img-10.jpg",
+    projectSlug: "dhuliyan-luxury-villa",
+  },
+  {
+    id: "11",
+    number: "11",
+    title: "COURTYARD HAVEN",
+    subtitle: "VERNACULAR MASONRY & SHADING",
+    category: "Villas",
+    location: "Murshidabad, West Bengal",
+    image: "/images/all-images/img-11.jpg",
+    projectSlug: "dhuliyan-luxury-villa",
+  },
+  {
+    id: "12",
+    number: "12",
+    title: "SOMNATH VILLA",
+    subtitle: "TIMELESS GEOMETRY & NATURE HARMONY",
+    category: "Villas",
+    location: "Bangalore, Karnataka",
+    image: "/images/all-images/img-12.jpg",
+    projectSlug: "private-villas-and-farm-house",
+  },
+  {
+    id: "13",
+    number: "13",
+    title: "PRIVATE VILLAS & FARM HOUSE",
+    subtitle: "TRANQUIL AGRARIAN RETREAT",
+    category: "Villas",
+    location: "Mysore, Karnataka",
+    image: "/images/all-images/img-13.jpg",
+    projectSlug: "private-villas-and-farm-house",
+  },
+  {
+    id: "14",
+    number: "14",
+    title: "BESPOKE INTERIORS",
+    subtitle: "WARM ACOUSTIC CRAFTSMANSHIP",
+    category: "Interiors",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-14.jpg",
+    projectSlug: "interiors-contemporary",
+  },
+  {
+    id: "15",
+    number: "15",
+    title: "RESIDENT'S HALL & CLUB",
+    subtitle: "EXCLUSIVE VIP COMMUNITY SPACES",
+    category: "Interiors",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-15.jpg",
+    projectSlug: "interiors-contemporary",
+  },
+  {
+    id: "16",
+    number: "16",
+    title: "CONTEMPORARY INTERIORS",
+    subtitle: "TACTILE TEXTURES & REFINED LIGHT",
+    category: "Interiors",
+    location: "Kolkata, West Bengal",
+    image: "/images/all-images/img-16.jpg",
+    projectSlug: "interiors-contemporary",
+  },
+  {
+    id: "17",
+    number: "17",
+    title: "BEYOND SUSTAINABILITY",
+    subtitle: "REGENERATIVE ECOLOGICAL ARCHITECTURE",
+    category: "Regenerative Built Systems",
+    location: "Eastern India",
+    image: "/images/all-images/img-17.jpg",
+    projectSlug: "beyond-sustainability",
   },
 ];
 
@@ -187,6 +267,7 @@ export default function HeroCarousel() {
             alt={`${currentSlide.title} - ${currentSlide.subtitle}`}
             fill
             priority
+            fetchPriority="high"
             quality={80}
             sizes="100vw"
             className="object-cover object-center"
@@ -231,7 +312,7 @@ export default function HeroCarousel() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-4"
             >
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-[#F7F5F0] leading-[1.04]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#F7F5F0] leading-[1.08]">
                 {currentSlide.title}
               </h1>
 
@@ -239,7 +320,7 @@ export default function HeroCarousel() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="text-sm sm:text-base md:text-lg font-sans uppercase tracking-[0.32em] text-[#D8BD74] font-normal"
+                className="text-xs sm:text-sm md:text-base font-sans uppercase tracking-[0.28em] text-[#D8BD74] font-normal"
               >
                 {currentSlide.subtitle}
               </motion.p>
@@ -259,19 +340,8 @@ export default function HeroCarousel() {
                   <span className="relative z-10">Explore Project</span>
                   <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1.5" />
 
-                  {/* Continuous Sheen Sweep Animation */}
-                  <motion.div
-                    animate={{
-                      x: ["-100%", "200%"],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 3,
-                      ease: "easeInOut",
-                      repeatDelay: 1,
-                    }}
-                    className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 pointer-events-none"
-                  />
+                  {/* Continuous Sheen Sweep Animation (Pure GPU Composited CSS) */}
+                  <div className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none animate-shimmer-sweep" />
                 </Link>
 
                 {/* Secondary Button with Active Border Draw */}
@@ -303,7 +373,7 @@ export default function HeroCarousel() {
             </span>
             <span className="text-sm text-[#8E8A80]">/</span>
             <span className="text-xs text-[#A8A398]">
-              0{HERO_SLIDES.length}
+              {HERO_SLIDES.length < 10 ? `0${HERO_SLIDES.length}` : HERO_SLIDES.length}
             </span>
           </div>
         </div>

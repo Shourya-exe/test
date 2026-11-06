@@ -60,7 +60,7 @@ export const STUDIO_DATA = {
     {
       city: "Bhubaneswar",
       title: "Bhubaneswar Studio",
-      address: "66 Bidhanagar, Bhubaneswar, Odisha 751006",
+      address: "Bhubaneswar, Odisha 751006",
       phone: "+91 98364 21375",
       email: "bhubaneswar@redefiningarchitecture.com",
     },

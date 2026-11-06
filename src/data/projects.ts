@@ -22,18 +22,17 @@ export const PROJECTS: Project[] = [
   {
     id: "01",
     slug: "the-duet-ballygunge",
-    title: "The Duet - Luxury Residential Tower",
+    title: "LUXURY 16 STOREY RESIDENCY AT BALLYGUNGE",
     category: "Residential: High-End Luxury",
     categorySlug: "residential-luxury",
     tagline: "Towering elegance sculpted with climate-responsive double skin and panoramic vistas.",
     location: "Ballygunge, Kolkata",
-    year: "2024",
-    area: "3,80,000 sq.ft",
-    status: "Completed",
+    year: "ON GOING",
+    area: "50,000 sq.ft",
+    status: "ON GOING",
     workedFor: "Premier Real Estate Developers & Consultancies",
-    coverImage: "/images/projects/the-duet/cover.jpg",
+    coverImage: "/images/all-images/img-5.jpg",
     gallery: [
-      "/images/projects/the-duet/cover.jpg",
       "/images/projects/the-duet/aerial.jpg",
       "/images/projects/the-duet/night.jpg",
       "/images/projects/luxury-interiors/cover.jpg",
@@ -50,10 +49,11 @@ export const PROJECTS: Project[] = [
       "Architectural Design",
       "Facade Engineering",
       "Building Sanction Coordination (KMC)",
-      "IGBC Green Certification",
+      "IGBC Gold Certification",
       "MEPF Design Management"
     ],
     highlights: [
+      "IGBC Gold Certified Sustainable Architecture",
       "Dual-aspect panoramic residences with natural cross-ventilation",
       "Climate-responsive horizontal and vertical louvre systems",
       "Private cantilevered sky terraces and wellness club"
@@ -65,27 +65,25 @@ export const PROJECTS: Project[] = [
     title: "Medical College & Teaching Hospital",
     category: "Health Care",
     categorySlug: "healthcare",
-    tagline: "A state-of-the-art 850-bed academic medical campus planned for clinical excellence and healing environments.",
-    location: "Bhubaneswar, Odisha",
+    tagline: "A state-of-the-art academic medical campus planned for clinical excellence and healing environments.",
+    location: "Phulbani & Koraput, Odisha",
     year: "2023",
     area: "9,50,000 sq.ft",
     status: "Completed / Commissioned",
     workedFor: "State Healthcare Corporation & Institutional Consultancies",
-    coverImage: "/images/projects/medical-college/cover.jpg",
+    coverImage: "/images/all-images/img-9.jpg",
     gallery: [
-      "/images/projects/medical-college/cover.jpg",
-      "/images/projects/medical-college/view-1.jpg",
-      "/images/projects/medical-college/view-2.jpg",
-      "/images/projects/medical-college/view-3.jpg",
-      "/images/projects/medical-college/view-4.jpg",
-      "/images/projects/medical-college/view-5.jpg"
+      "/images/all-images/img-9.jpg",
+      "/images/all-images/img-18.jpg",
+      "/images/all-images/img-19.jpg",
+      "/images/all-images/img-20.jpg"
     ],
     brief:
-      "A sprawling super-specialty medical campus comprising academic blocks, 850-bed teaching hospital, diagnostic wings, and student residences designed with therapeutic landscape courtyards.",
+      "A sprawling super-specialty medical campus comprising academic blocks, teaching hospital, diagnostic wings, and student residences designed with therapeutic landscape courtyards.",
     description: [
       "Designed as a comprehensive tertiary healthcare institution, the campus orchestrates complex clinical workflows into clear, human-scaled circulation spines. Dedicated vehicular segregation separates emergency, OPD, patient transfer, and visitor streams.",
       "Internal courtyards and landscaped light wells penetrate the deep hospital floor plates, bringing daylight and natural greenery deep into recovery wards, nurse stations, and waiting lounges.",
-      "The project adheres strictly to statutory hospital norms, biomedical clearances, BDA approvals, and environmental sustainability standards."
+      "The project adheres strictly to statutory hospital norms, biomedical clearances, and environmental sustainability standards."
     ],
     disciplines: [
       "Hospital Architecture",
@@ -103,22 +101,21 @@ export const PROJECTS: Project[] = [
   {
     id: "03",
     slug: "the-curve-residences",
-    title: "The Curve Luxury Residences",
+    title: "42 STORIED LUXURY RESIDENCE",
     category: "Residential: High-End Luxury",
     categorySlug: "residential-luxury",
     tagline: "Curvilinear aerodynamic architecture maximizing natural light, garden views, and spatial grandeur.",
     location: "Kolkata",
-    year: "2023",
-    area: "2,40,000 sq.ft",
-    status: "Under Execution",
+    year: "ON GOING",
+    area: "Approx. 12,40,000 sq.ft",
+    status: "ON GOING",
     workedFor: "Leading Real Estate Developers",
-    coverImage: "/images/projects/the-curve/cover.jpg",
+    coverImage: "/images/all-images/img-2.jpg",
     gallery: [
-      "/images/projects/the-curve/cover.jpg",
-      "/images/projects/the-curve/facade.jpg",
-      "/images/projects/the-curve/render.jpg",
-      "/images/projects/the-curve/plan-1.jpg",
-      "/images/projects/the-curve/plan-2.jpg"
+      "/images/all-images/img-2.jpg",
+      "/images/all-images/img-3.jpg",
+      "/images/all-images/img-4.webp",
+      "/images/all-images/img-21.jpg"
     ],
     brief:
       "An iconic residential tower defined by fluid geometry, sweeping glass facades, and cantilevered landscaped decks that seamlessly unite the interior sanctuary with sky gardens.",
@@ -130,11 +127,13 @@ export const PROJECTS: Project[] = [
     disciplines: [
       "Architectural Design",
       "Master Planning",
+      "IGBC Platinum Green Certification",
       "Structural & MEPF Coordination",
       "KMC Sanction Compliance",
       "Landscape Architecture"
     ],
     highlights: [
+      "IGBC PLATINUM CERTIFIED BUILDING",
       "Dynamic curved continuous balconies providing natural solar shade",
       "Acoustically insulated double-glazed curtain walls",
       "Podium level tropical garden deck with bio-pool"
@@ -143,20 +142,21 @@ export const PROJECTS: Project[] = [
   {
     id: "04",
     slug: "dhuliyan-luxury-villa",
-    title: "Luxury Waterfront Villa at Dhuliyan",
+    title: "Luxury Waterfront Villa at Murshidabad",
     category: "Villas",
     categorySlug: "villas",
     tagline: "A bespoke private sanctuary celebrating vernacular masonry, expansive water bodies, and microclimate breezes.",
     location: "Murshidabad, West Bengal",
-    year: "2024",
+    year: "ONGOING",
     area: "28,000 sq.ft",
-    status: "Under Construction",
+    status: "ONGOING",
     workedFor: "Private Client",
     coverImage: "/images/projects/dhuliyan-villa/cover.jpg",
     gallery: [
       "/images/projects/dhuliyan-villa/cover.jpg",
       "/images/projects/dhuliyan-villa/exterior-1.jpg",
-      "/images/projects/dhuliyan-villa/exterior-2.jpg"
+      "/images/projects/dhuliyan-villa/exterior-2.jpg",
+      "/images/all-images/img-24.jpg"
     ],
     brief:
       "A grand riverside estate nestled along the Ganges in Murshidabad, synthesizing classical Nawabi heritage proportions with contemporary tropical minimalism.",
@@ -180,6 +180,121 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "05",
+    slug: "private-villas-and-farm-house",
+    title: "Private Villas and Farm House",
+    category: "Villas",
+    categorySlug: "villas",
+    tagline: "Tranquil agrarian sanctuary pairing vernacular sensibilities with contemporary pavilion architecture.",
+    location: "Mysore & Bangalore, Karnataka",
+    year: "ONGOING",
+    area: "35,000 sq.ft",
+    status: "ONGOING",
+    workedFor: "Private Client",
+    coverImage: "/images/all-images/img-13.jpg",
+    gallery: [
+      "/images/all-images/img-25.jpg",
+      "/images/all-images/img-26.jpg",
+      "/images/all-images/img-27.jpg",
+      "/images/all-images/img-28.jpg"
+    ],
+    brief:
+      "An expansive farm estate and private villa retreat in Karnataka designed with open-air verandas, deep overhangs, and natural landscape integration.",
+    description: [
+      "Conceived as an escape from urban density, the private villa and farmhouse synthesize traditional courtyard arrangements with modern structural expanses. Earthy materials and generous shaded perimeters provide passive thermal regulation throughout the year.",
+      "The estate master plan harmonizes residential pavilions with landscaped orchards, private water bodies, and Vaastu-aligned functional zoning.",
+      "Integrated services ensure self-sufficient water catchment, bio-sewage treatment, and climate-resilient estate living."
+    ],
+    disciplines: [
+      "Architectural Design",
+      "Master Planning",
+      "Landscape Architecture",
+      "Vaastu Consultation",
+      "PMC Supervision"
+    ],
+    highlights: [
+      "Deep vernacular verandas offering passive evaporative cooling",
+      "Master-planned agricultural orchard and landscape integration",
+      "Vaastu-aligned spatial distribution with natural light wells"
+    ]
+  },
+  {
+    id: "06",
+    slug: "interiors-contemporary",
+    title: "Interiors - Executive & Resident Salons",
+    category: "Interiors",
+    categorySlug: "interiors",
+    tagline: "Bespoke acoustic woodcraft, subtle ambient illumination, and handcrafted executive spaces.",
+    location: "Kolkata, West Bengal",
+    year: "ONGOING",
+    area: "40,000 sq.ft",
+    status: "ONGOING",
+    workedFor: "Corporate Developers & Hospitality",
+    coverImage: "/images/all-images/img-16.jpg",
+    gallery: [
+      "/images/all-images/img-14.jpg",
+      "/images/all-images/img-15.jpg",
+      "/images/all-images/img-29.jpg",
+      "/images/all-images/img-30.jpg"
+    ],
+    brief:
+      "A bespoke interior architecture suite encompassing executive meeting chambers, resident lounges, and refined hospitality spaces.",
+    description: [
+      "This interior project explores the dialogue between tactile natural materials and contemporary minimalism. Fluted timber paneling, concealed acoustic baffling, and warm architectural lighting create a serene atmosphere.",
+      "Each space is ergonomically crafted to balance high-traffic durability with residential warmth, featuring custom joinery and tailored furniture pieces.",
+      "Specialized acoustic engineering ensures speech privacy across meeting zones while maintaining visual transparency through fluted glass partitions."
+    ],
+    disciplines: [
+      "Comprehensive Interior Architecture",
+      "Acoustic Engineering & Lighting",
+      "Custom Joinery & Millwork Detailing",
+      "Material Specifications & BOQ"
+    ],
+    highlights: [
+      "Bespoke fluted acoustic walnut wall cladding",
+      "Concealed architectural lighting with scene automation",
+      "High-specification executive conference and lounge furnishings"
+    ]
+  },
+  {
+    id: "07",
+    slug: "interiors-luxury-residences",
+    title: "Interiors - Luxury Private Residences & Lounges",
+    category: "Interiors",
+    categorySlug: "interiors",
+    tagline: "Opulent material palettes, sculptural lighting, and curated living sanctuaries.",
+    location: "Kolkata, West Bengal",
+    year: "ONGOING",
+    area: "25,000 sq.ft",
+    status: "ONGOING",
+    workedFor: "Private Clients & Developers",
+    coverImage: "/images/all-images/img-33.jpg",
+    gallery: [
+      "/images/all-images/img-31.jpg",
+      "/images/all-images/img-32.jpg",
+      "/images/all-images/img-34.jpg",
+      "/images/all-images/img-35.jpg"
+    ],
+    brief:
+      "High-end residential interior detailing emphasizing bespoke marble masonry, custom lighting installations, and serene bedroom suites.",
+    description: [
+      "Crafted for discerning homeowners, this interior commission showcases meticulous material selection: Italian marble floors, textured wallpapers, brass accents, and recessed linear lighting.",
+      "Living and dining zones flow seamlessly into one another, while private suites provide peaceful sanctuaries with tailored walk-in closets and spa-like bathrooms.",
+      "The interior language is timeless yet modern, reflecting an understated luxury where every fixture and joint is engineered to perfection."
+    ],
+    disciplines: [
+      "Residential Interior Architecture",
+      "Custom Millwork & Cabinetry Detailing",
+      "Lighting Design & Automation",
+      "Turnkey PMC & Quality Assurance"
+    ],
+    highlights: [
+      "Book-matched Italian marble feature walls with brass inlay",
+      "Custom integrated architectural lighting and false ceilings",
+      "Bespoke dressing rooms and spa-grade ensuite bathrooms"
+    ]
+  },
+  {
+    id: "08",
     slug: "kolkata-exhibition-centre",
     title: "International Exhibition & Convention Centre",
     category: "Hospitality",
@@ -218,7 +333,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "06",
+    id: "09",
     slug: "puri-diagnostic-centre",
     title: "Proposed Diagnostic & Wellness Centre",
     category: "Health Care",
@@ -258,7 +373,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "07",
+    id: "10",
     slug: "high-end-club-interiors",
     title: "High-End Club & Wellness Interiors",
     category: "Interiors",
@@ -298,7 +413,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "08",
+    id: "11",
     slug: "ecostation-it-tower",
     title: "Ecostation IT Office Building",
     category: "IT and office buildings",
@@ -318,7 +433,7 @@ export const PROJECTS: Project[] = [
     description: [
       "Located in Kolkata's premier tech hub Sector V, Ecostation sets a benchmark for resource efficiency. The central core layout yields expansive column-free tenant floors of 35,000 sq.ft with high flexibility for enterprise fit-outs.",
       "High-performance double-glazed solar low-E curtain walling dramatically lowers HVAC chiller loads while flooding interior workstations with glare-free daylight.",
-      "Rainwater harvesting, rooftop solar photovoltaic arrays, and an automated building management system deliver 34% energy savings over standard commercial baselines."
+      "Rainwater harvesting, rooftop solar photovoltaic arrays, and an automated building management system deliver 34% energy savings over standard commercial baselines.",
     ],
     disciplines: [
       "Commercial Workplace Architecture",
@@ -334,7 +449,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "09",
+    id: "12",
     slug: "autohub-corporate",
     title: "Autohub Showroom & Corporate Headquarters",
     category: "Mixed Commercial",
@@ -355,7 +470,7 @@ export const PROJECTS: Project[] = [
     description: [
       "The design highlights speed, precision, and transparency. A 12-meter tall structural glass curtain wall creates a seamless visual showcase facing the major arterial expressway.",
       "A ramp system leads vehicles up to elevated showcase galleries, while the rear houses clean, acoustically isolated diagnostic workshops with specialized grease-interception drainage systems.",
-      "The upper three floors host executive boardrooms, corporate training centers, and open-plan administrative offices overlooking the grand showroom atrium below."
+      "The upper three floors host executive boardrooms, corporate training centers, and open-plan administrative offices overlooking the grand showroom atrium below.",
     ],
     disciplines: [
       "Commercial & Retail Architecture",
@@ -371,7 +486,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "10",
+    id: "13",
     slug: "amtala-industrial-park",
     title: "Amtala MSME Industrial Park",
     category: "MSME industrial parks",
@@ -408,7 +523,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "11",
+    id: "14",
     slug: "rajarhat-housing",
     title: "Rajarhat Housing Complex",
     category: "Residential: housing",
@@ -446,7 +561,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "12",
+    id: "15",
     slug: "estate-villa-murshidabad",
     title: "Residential Estate Villa & Gardens",
     category: "Villas",
@@ -468,7 +583,7 @@ export const PROJECTS: Project[] = [
     description: [
       "Surrounded by fruit orchards, this villa emphasizes timeless horizontal planes, wide overhanging eaves, and double-height living areas that invite the landscape inside.",
       "Deep verandas shield the brick and plaster facades from driving summer rains, while private upper-level bedroom balconies look out onto the sunset horizon.",
-      "Constructed by local artisans under the studio's design guidance, the villa showcases how economical, climate-appropriate construction can achieve luxurious architectural grace."
+      "Constructed by local artisans under the studio's design guidance, the villa showcases how economical, climate-appropriate construction can achieve luxurious architectural grace.",
     ],
     disciplines: [
       "Architectural Design",

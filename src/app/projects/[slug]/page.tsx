@@ -64,6 +64,15 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p className="text-base sm:text-xl text-[#D8BD74] font-serif max-w-4xl leading-relaxed">
             {project.tagline}
           </p>
+
+          {project.disciplines.some((d) => d.toLowerCase().includes("igbc")) && (
+            <div className="mt-5 inline-flex items-center gap-2.5 px-4 py-2 bg-[#C5A85C]/15 border border-[#C5A85C] text-[#F7F5F0] text-xs font-mono font-bold uppercase tracking-widest">
+              <CheckCircle2 className="w-4 h-4 text-[#C5A85C]" />
+              <span>
+                {project.disciplines.find((d) => d.toLowerCase().includes("igbc"))}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Hero Large Cover Photograph */}
@@ -158,14 +167,21 @@ export default async function ProjectDetailPage({ params }: Props) {
                   Integrated Disciplines
                 </span>
                 <div className="flex flex-wrap gap-1.5">
-                  {project.disciplines.map((d) => (
-                    <span
-                      key={d}
-                      className="px-2 py-1 bg-[#1A1815] border border-[#2E2B25] text-[10px] text-[#A8A398] font-mono"
-                    >
-                      {d}
-                    </span>
-                  ))}
+                  {project.disciplines.map((d) => {
+                    const isIgbc = d.toLowerCase().includes("igbc");
+                    return (
+                      <span
+                        key={d}
+                        className={`px-2 py-1 border text-[10px] font-mono ${
+                          isIgbc
+                            ? "bg-[#C5A85C]/20 border-[#C5A85C] text-[#F7F5F0] font-bold"
+                            : "bg-[#1A1815] border-[#2E2B25] text-[#A8A398]"
+                        }`}
+                      >
+                        {d}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
