@@ -154,3 +154,4 @@ If you have Hostinger's entry-level **Single / Premium Shared Hosting** (which d
    ```
 2. Run `npm run build` locally.
 3. Upload the generated files inside the **`out`** folder directly into Hostinger's **`public_html`** directory via the hPanel File Manager or FTP.
+
