@@ -8,7 +8,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [syncedToSheet, setSyncedToSheet] = useState(false);
+  const [emailDelivered, setEmailDelivered] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       if (res.ok && data.success) {
         setSubmitted(true);
-        setSyncedToSheet(data.googleSheetSynced || false);
+        setEmailDelivered(data.emailSent || false);
         setFormData({
           name: "",
           email: "",
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-[#858178] max-w-3xl leading-relaxed">
-            Tell us about your site, your brief, your timeline, or your statutory sanction requirements. Inquiries are automatically synchronized to our central studio directory and Google Sheet.
+            Tell us about your site, your brief, your timeline, or your statutory sanction requirements. Inquiries are delivered directly to our studio team at info@redefinedesignstudio.in.
           </p>
         </div>
 
@@ -151,12 +151,12 @@ export default function ContactPage() {
                   Thank You for Reaching Out
                 </h3>
                 <p className="text-xs text-[#969188] max-w-md mx-auto leading-relaxed">
-                  Your project enquiry has been logged successfully and forwarded to our Google Sheet and Kolkata/Bhubaneswar studios. Our Principal Architect will connect within two working days.
+                  Your project enquiry has been delivered to info@redefinedesignstudio.in and logged in our studio directory. Our Principal Architect will review your brief and connect within two working days.
                 </p>
 
                 <div className="pt-2">
                   <span className="inline-block px-3 py-1 bg-[#1A1815] border border-[#2E2B25] text-[11px] font-mono text-[#C5A85C]">
-                    ✓ Stored in Google Sheets Registry
+                    ✓ Delivered to info@redefinedesignstudio.in
                   </span>
                 </div>
 
@@ -289,7 +289,7 @@ export default function ContactPage() {
                     </>
                   ) : (
                     <>
-                      <span>Submit Inquiry to Google Sheets</span>
+                      <span>Submit Inquiry</span>
                       <Send className="w-3.5 h-3.5" />
                     </>
                   )}

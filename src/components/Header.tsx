@@ -246,7 +246,7 @@ export default function Header() {
                       +91 98364 21375
                     </a>
                     <a
-                      href="mailto:hello@redefiningarchitecture.com"
+                      href={`mailto:${STUDIO_DATA.generalEmail}`}
                       className="hover:text-[#F7F5F0] transition-colors flex items-center gap-1.5"
                     >
                       <Mail className="w-3 h-3 text-[#C5A85C]" />

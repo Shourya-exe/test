@@ -65,7 +65,7 @@ export const STUDIO_DATA = {
       email: "bhubaneswar@redefiningarchitecture.com",
     },
   ],
-  generalEmail: "hello@redefiningarchitecture.com",
+  generalEmail: "info@redefinedesignstudio.in",
   phone: "+91 98364 21375",
   socials: [
     { name: "Instagram", href: "https://instagram.com" },

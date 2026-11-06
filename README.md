@@ -46,9 +46,9 @@ npm run lint
   - `/design` — Design philosophy & methodologies
   - `/life-at-studio` — Studio culture & craftsmanship
   - `/news` — Updates, press, and publications
-  - `/contact` — Comprehensive inquiry form with Google Sheets integration
-  - `/api/inquiry` — Serverless inquiry submission route with automated sheet synchronization
+  - `/contact` — Comprehensive inquiry form with automated email dispatch to `info@redefinedesignstudio.in`
+  - `/api/inquiry` — Serverless inquiry submission route with email delivery (SMTP / Resend) and local persistent backup
 
-- **Google Sheets Integration**:
-  - Full instructions provided in [`GOOGLE_SHEETS_SETUP.md`](./GOOGLE_SHEETS_SETUP.md) for automated webhook and Google Cloud Service Account modes.
+- **Email Inquiry Routing**:
+  - Full instructions provided in [`EMAIL_SETUP.md`](./EMAIL_SETUP.md) for configuring SMTP (Gmail, Zoho, Titan) or Resend.
 

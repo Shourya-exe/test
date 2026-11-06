@@ -11,13 +11,10 @@
   npm run start
 
 
-# Google Sheets Integration Guide for Redefining Architecture
-
-This project connects customer inquiries directly to your **Google Sheet**.
-
-There are two supported methods:
-1. **Method A: Google Apps Script Webhook (Recommended — Takes 1 minute, no API keys or Google Cloud setup needed)**
-2. **Method B: Google Cloud Service Account (Official Google Sheets API v4)**
+> **Note:** The inquiry system has been switched to direct **Email Routing** to **`info@redefinedesignstudio.in`**.
+> See [`EMAIL_SETUP.md`](./EMAIL_SETUP.md) for full instructions on configuring SMTP or Resend.
+>
+> *(Legacy Google Sheets documentation preserved below for reference if needed)*
 
 ---
 
