@@ -74,3 +74,4 @@ EMAIL_FROM="Redefining Architecture <onboarding@resend.dev>"
 2. Go to **Settings** → **Environment Variables**.
 3. Add the variables from your chosen method above.
 4. Redeploy the project for the variables to take effect.
+

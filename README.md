@@ -52,3 +52,7 @@ npm run lint
 - **Email Inquiry Routing**:
   - Full instructions provided in [`EMAIL_SETUP.md`](./EMAIL_SETUP.md) for configuring SMTP (Gmail, Zoho, Titan) or Resend.
 
+- **Deployment**:
+  - **Hostinger**: Complete guide in [`HOSTINGER_DEPLOYMENT.md`](./HOSTINGER_DEPLOYMENT.md) for hPanel Node.js Web Apps, Hostinger VPS, or static hosting.
+  - **Vercel**: Pre-configured via `vercel.json` with zero-config auto-deployments.
+
