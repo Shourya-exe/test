@@ -55,22 +55,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-32 pb-28 bg-[#0D0C0B]">
+    <div className="pt-32 pb-28 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16 pb-8 border-b border-[#262420]">
+        <div className="mb-16 pb-8 border-b border-[#E7E3DA]">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-[1px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+            <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
               Let&apos;s Connect · Kolkata & Bhubaneswar
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#F7F5F0] tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight mb-4">
             Start a Conversation
           </h1>
 
-          <p className="text-base sm:text-lg text-[#858178] max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#7A746B] max-w-3xl leading-relaxed">
             Tell us about your site, your brief, your timeline, or your statutory sanction requirements. Inquiries are delivered directly to our studio team at info@redefinedesignstudio.in.
           </p>
         </div>
@@ -80,62 +80,62 @@ export default function ContactPage() {
           {/* Left Column: Office Locations & Details (Col 5) */}
           <div className="lg:col-span-5 space-y-10">
             {/* Kolkata Studio */}
-            <div className="p-8 bg-[#141311] border border-[#262420] space-y-4">
+            <div className="p-8 bg-[#FFFFFF] border border-[#E7E3DA] space-y-4">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#C5A85C]" />
-                <h3 className="text-sm font-sans font-bold uppercase tracking-widest text-[#F7F5F0]">
+                <MapPin className="w-4 h-4 text-[#9E7D2D]" />
+                <h3 className="text-sm font-sans font-bold uppercase tracking-widest text-[#141311]">
                   Kolkata Studio
                 </h3>
               </div>
 
-              <p className="text-xs text-[#B5B0A6] leading-relaxed">
+              <p className="text-xs text-[#4D4942] leading-relaxed">
                 Blob Studio, 5th Floor, Yamuna Building, 86 Golaghata Rd, Sreebhumi, Lake Town, Kolkata, West Bengal 700048
               </p>
 
-              <div className="pt-2 flex flex-col space-y-2 text-xs text-[#969188]">
+              <div className="pt-2 flex flex-col space-y-2 text-xs text-[#757066]">
                 <a
                   href="tel:+919836421375"
-                  className="flex items-center gap-2 text-[#ECE9E1] hover:text-[#C5A85C] transition-colors"
+                  className="flex items-center gap-2 text-[#3D3933] hover:text-[#9E7D2D] transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#C5A85C]" />
+                  <Phone className="w-3.5 h-3.5 text-[#9E7D2D]" />
                   +91 98364 21375
                 </a>
                 <a
                   href={`mailto:${STUDIO_DATA.generalEmail}`}
-                  className="flex items-center gap-2 text-[#ECE9E1] hover:text-[#C5A85C] transition-colors"
+                  className="flex items-center gap-2 text-[#3D3933] hover:text-[#9E7D2D] transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#C5A85C]" />
+                  <Mail className="w-3.5 h-3.5 text-[#9E7D2D]" />
                   kolkata@redefiningarchitecture.com
                 </a>
               </div>
             </div>
 
             {/* Bhubaneswar Studio */}
-            <div className="p-8 bg-[#141311] border border-[#262420] space-y-4">
+            <div className="p-8 bg-[#FFFFFF] border border-[#E7E3DA] space-y-4">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#C5A85C]" />
-                <h3 className="text-sm font-sans font-bold uppercase tracking-widest text-[#F7F5F0]">
+                <MapPin className="w-4 h-4 text-[#9E7D2D]" />
+                <h3 className="text-sm font-sans font-bold uppercase tracking-widest text-[#141311]">
                   Bhubaneswar Studio
                 </h3>
               </div>
 
-              <p className="text-xs text-[#B5B0A6] leading-relaxed">
+              <p className="text-xs text-[#4D4942] leading-relaxed">
                 Bhubaneswar, Odisha 751006
               </p>
 
-              <div className="pt-2 flex flex-col space-y-2 text-xs text-[#969188]">
+              <div className="pt-2 flex flex-col space-y-2 text-xs text-[#757066]">
                 <a
                   href="tel:+919836421375"
-                  className="flex items-center gap-2 text-[#ECE9E1] hover:text-[#C5A85C] transition-colors"
+                  className="flex items-center gap-2 text-[#3D3933] hover:text-[#9E7D2D] transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#C5A85C]" />
+                  <Phone className="w-3.5 h-3.5 text-[#9E7D2D]" />
                   +91 98364 21375
                 </a>
                 <a
                   href={`mailto:${STUDIO_DATA.generalEmail}`}
-                  className="flex items-center gap-2 text-[#ECE9E1] hover:text-[#C5A85C] transition-colors"
+                  className="flex items-center gap-2 text-[#3D3933] hover:text-[#9E7D2D] transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#C5A85C]" />
+                  <Mail className="w-3.5 h-3.5 text-[#9E7D2D]" />
                   bhubaneswar@redefiningarchitecture.com
                 </a>
               </div>
@@ -143,26 +143,26 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Interactive Consultation Form (Col 7) */}
-          <div className="lg:col-span-7 p-8 sm:p-12 bg-[#141311] border border-[#262420]">
+          <div className="lg:col-span-7 p-8 sm:p-12 bg-[#FFFFFF] border border-[#E7E3DA]">
             {submitted ? (
               <div className="py-16 text-center space-y-4">
-                <CheckCircle className="w-12 h-12 text-[#C5A85C] mx-auto" />
-                <h3 className="text-2xl font-serif text-[#F7F5F0]">
+                <CheckCircle className="w-12 h-12 text-[#9E7D2D] mx-auto" />
+                <h3 className="text-2xl font-serif text-[#141311]">
                   Thank You for Reaching Out
                 </h3>
-                <p className="text-xs text-[#969188] max-w-md mx-auto leading-relaxed">
+                <p className="text-xs text-[#757066] max-w-md mx-auto leading-relaxed">
                   Your project enquiry has been delivered to info@redefinedesignstudio.in and logged in our studio directory. Our Principal Architect will review your brief and connect within two working days.
                 </p>
 
                 <div className="pt-2">
-                  <span className="inline-block px-3 py-1 bg-[#1A1815] border border-[#2E2B25] text-[11px] font-mono text-[#C5A85C]">
+                  <span className="inline-block px-3 py-1 bg-[#F8F6F0] border border-[#DDD8CE] text-[11px] font-mono text-[#9E7D2D]">
                     ✓ Delivered to info@redefinedesignstudio.in
                   </span>
                 </div>
 
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 px-6 py-2.5 border border-[#C5A85C] text-[#C5A85C] text-xs uppercase tracking-widest hover:bg-[#C5A85C] hover:text-[#0D0C0B] transition-colors"
+                  className="mt-6 px-6 py-2.5 border border-[#9E7D2D] text-[#9E7D2D] text-xs uppercase tracking-widest hover:bg-[#9E7D2D] hover:text-[#FBFBFA] transition-colors"
                 >
                   Send Another Message
                 </button>
@@ -170,10 +170,10 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-serif text-[#F7F5F0] mb-2">
+                  <h3 className="text-xl font-serif text-[#141311] mb-2">
                     Project Consultation Request
                   </h3>
-                  <p className="text-xs text-[#858178]">
+                  <p className="text-xs text-[#7A746B]">
                     Please share fundamental details regarding your prospective development.
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                       Full Name *
                     </label>
                     <input
@@ -196,12 +196,12 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Rahul Sen"
-                      className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors"
+                      className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                       Email Address *
                     </label>
                     <input
@@ -210,14 +210,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. rahul@company.com"
-                      className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors"
+                      className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                       Phone Number
                     </label>
                     <input
@@ -225,18 +225,18 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="e.g. +91 98300 00000"
-                      className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors"
+                      className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                       Service / Discipline *
                     </label>
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors"
+                      className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors"
                     >
                       {SERVICES.map((s) => (
                         <option key={s.id} value={s.title}>
@@ -251,7 +251,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                     Project Location / City
                   </label>
                   <input
@@ -259,12 +259,12 @@ export default function ContactPage() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="e.g. Ballygunge, Kolkata or Chandrasekharpur, Bhubaneswar"
-                    className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors"
+                    className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#969188] mb-2">
+                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#757066] mb-2">
                     About the Project & Site Scope *
                   </label>
                   <textarea
@@ -273,14 +273,14 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe the site area, intended program, target timeline, and specific requirements..."
-                    className="w-full px-4 py-3 bg-[#0D0C0B] border border-[#262420] text-[#F7F5F0] text-xs focus:outline-none focus:border-[#C5A85C] transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-[#FBFBFA] border border-[#E7E3DA] text-[#141311] text-xs focus:outline-none focus:border-[#9E7D2D] transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-[#C5A85C] text-[#0D0C0B] text-xs font-bold uppercase tracking-[0.2em] transition-all hover:bg-[#D8BD74] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-[#9E7D2D] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all hover:bg-[#8C6D24] shadow-md flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

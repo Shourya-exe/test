@@ -14,7 +14,7 @@ interface VideoPlayerProps {
 export default function ArchitecturalVideoPlayer({
   src = "/videos/dialogue-with-nature.mp4",
   poster = "/images/nature/nature-hero.jpg",
-  caption = "Dialogue with Nature · Biophilic Motion Study",
+  caption = "Salient Architectural Motion Study",
   title = "Living Architecture in Motion",
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -90,7 +90,7 @@ export default function ArchitecturalVideoPlayer({
       ref={containerRef}
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
-      className="relative w-full aspect-video border border-[#262420] bg-[#090807] overflow-hidden group select-none shadow-2xl"
+      className="relative w-full aspect-video border border-[#E7E3DA] bg-[#F4F1EA] overflow-hidden group select-none shadow-2xl"
     >
       {/* Optimized Poster Image when video is not activated */}
       {!shouldLoadVideo ? (
@@ -117,16 +117,16 @@ export default function ArchitecturalVideoPlayer({
       )}
 
       {/* Subtle Vignette Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B]/80 via-transparent to-[#0D0C0B]/40 pointer-events-none transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA]/80 via-transparent to-[#FBFBFA]/40 pointer-events-none transition-opacity duration-300" />
 
       {/* Top Header Tag */}
       <div className="absolute top-5 left-5 right-5 flex items-center justify-between text-xs pointer-events-none z-20">
-        <div className="flex items-center gap-2 px-3 py-1 bg-[#0D0C0B]/85 backdrop-blur-md border border-[#C5A85C]/60 text-[10px] font-mono uppercase tracking-[0.2em] text-[#C5A85C]">
-          <Sparkles className="w-3 h-3 text-[#C5A85C]" />
+        <div className="flex items-center gap-2 px-3 py-1 bg-[#FBFBFA]/85 backdrop-blur-md border border-[#9E7D2D]/60 text-[10px] font-mono uppercase tracking-[0.2em] text-[#9E7D2D]">
+          <Sparkles className="w-3 h-3 text-[#9E7D2D]" />
           <span>{caption}</span>
         </div>
 
-        <div className="hidden sm:inline-block px-2.5 py-0.5 bg-[#0D0C0B]/80 backdrop-blur-md border border-[#262420] text-[10px] font-mono text-[#A8A398]">
+        <div className="hidden sm:inline-block px-2.5 py-0.5 bg-[#FBFBFA]/80 backdrop-blur-md border border-[#E7E3DA] text-[10px] font-mono text-[#68635A]">
           16 : 9 CINEMATIC ASPECT RATIO
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function ArchitecturalVideoPlayer({
         }`}
       >
         <button
-          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0D0C0B]/80 backdrop-blur-md border border-[#C5A85C] flex items-center justify-center text-[#F7F5F0] hover:scale-105 hover:bg-[#C5A85C] hover:text-[#0D0C0B] transition-all shadow-2xl"
+          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FBFBFA]/80 backdrop-blur-md border border-[#9E7D2D] flex items-center justify-center text-[#141311] hover:scale-105 hover:bg-[#9E7D2D] hover:text-[#FBFBFA] transition-all shadow-2xl"
           aria-label={isPlaying ? "Pause video" : "Play video"}
         >
           {isPlaying ? (
@@ -152,26 +152,26 @@ export default function ArchitecturalVideoPlayer({
 
       {/* Bottom Architectural HUD Controls */}
       <div
-        className={`absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/90 to-transparent flex flex-col gap-3 transition-opacity duration-300 z-20 ${
+        className={`absolute bottom-0 left-0 right-0 p-5 sm:p-6 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/90 to-transparent flex flex-col gap-3 transition-opacity duration-300 z-20 ${
           showControls || !isPlaying ? "opacity-100" : "opacity-0 sm:opacity-0"
         }`}
       >
         {/* Scrubber Progress Bar */}
         <div
           onClick={handleSeek}
-          className="relative w-full h-1 bg-[#262420] cursor-pointer group/bar rounded-full overflow-hidden"
+          className="relative w-full h-1 bg-[#E7E3DA] cursor-pointer group/bar rounded-full overflow-hidden"
         >
           <div
-            className="absolute top-0 left-0 bottom-0 bg-[#C5A85C] rounded-full transition-all duration-100"
+            className="absolute top-0 left-0 bottom-0 bg-[#9E7D2D] rounded-full transition-all duration-100"
             style={{ width: `${progress}%` }}
           />
         </div>
 
-        <div className="flex items-center justify-between text-xs text-[#B5B0A6]">
+        <div className="flex items-center justify-between text-xs text-[#4D4942]">
           <div className="flex items-center gap-4">
             <button
               onClick={togglePlay}
-              className="text-[#F7F5F0] hover:text-[#C5A85C] transition-colors focus:outline-none"
+              className="text-[#141311] hover:text-[#9E7D2D] transition-colors focus:outline-none"
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -179,23 +179,23 @@ export default function ArchitecturalVideoPlayer({
 
             <button
               onClick={toggleMute}
-              className="text-[#F7F5F0] hover:text-[#C5A85C] transition-colors focus:outline-none flex items-center gap-1.5"
+              className="text-[#141311] hover:text-[#9E7D2D] transition-colors focus:outline-none flex items-center gap-1.5"
               aria-label={isMuted ? "Unmute" : "Mute"}
             >
               {isMuted ? (
                 <>
-                  <VolumeX className="w-4 h-4 text-[#858178]" />
-                  <span className="text-[10px] font-mono text-[#78736A] uppercase hidden sm:inline">Muted</span>
+                  <VolumeX className="w-4 h-4 text-[#7A746B]" />
+                  <span className="text-[10px] font-mono text-[#827C72] uppercase hidden sm:inline">Muted</span>
                 </>
               ) : (
                 <>
-                  <Volume2 className="w-4 h-4 text-[#C5A85C]" />
-                  <span className="text-[10px] font-mono text-[#C5A85C] uppercase hidden sm:inline">Sound On</span>
+                  <Volume2 className="w-4 h-4 text-[#9E7D2D]" />
+                  <span className="text-[10px] font-mono text-[#9E7D2D] uppercase hidden sm:inline">Sound On</span>
                 </>
               )}
             </button>
 
-            <span className="text-xs font-serif text-[#ECE9E1] hidden md:inline">
+            <span className="text-xs font-serif text-[#3D3933] hidden md:inline">
               {title}
             </span>
           </div>
@@ -203,7 +203,7 @@ export default function ArchitecturalVideoPlayer({
           <div className="flex items-center gap-3">
             <button
               onClick={toggleFullscreen}
-              className="text-[#A8A398] hover:text-[#F7F5F0] transition-colors p-1"
+              className="text-[#68635A] hover:text-[#141311] transition-colors p-1"
               aria-label="Toggle Fullscreen"
             >
               <Maximize2 className="w-4 h-4" />

@@ -349,8 +349,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/puri-diagnostic/cover.jpg",
       "/images/projects/puri-diagnostic/view-1.jpg",
       "/images/projects/puri-diagnostic/view-2.jpg",
-      "/images/projects/puri-diagnostic/view-3.jpg",
-      "/images/projects/puri-diagnostic/view-4.jpg"
+      "/images/projects/puri-diagnostic/view-3.jpg"
     ],
     brief:
       "An advanced multi-modality diagnostic imaging and preventive healthcare centre designed specifically for the maritime coastal climate of Puri.",
@@ -389,8 +388,7 @@ export const PROJECTS: Project[] = [
       "/images/projects/luxury-interiors/cover.jpg",
       "/images/projects/luxury-interiors/lobby.jpg",
       "/images/projects/luxury-interiors/hall.jpg",
-      "/images/projects/luxury-interiors/gym.jpg",
-      "/images/projects/luxury-interiors/lift.jpg"
+      "/images/projects/luxury-interiors/gym.jpg"
     ],
     brief:
       "A turnkey interior transformation of a five-star private club, comprising reception lounges, fine-dining halls, state-of-the-art gymnasium, and VIP resident salons.",
@@ -414,42 +412,6 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "11",
-    slug: "ecostation-it-tower",
-    title: "Ecostation IT Office Building",
-    category: "IT and office buildings",
-    categorySlug: "it-office",
-    tagline: "A platinum-rated green commercial workplace built for tech enterprises and optimal energy performance.",
-    location: "Sector V, Salt Lake, Kolkata",
-    year: "2022",
-    area: "5,20,000 sq.ft",
-    status: "Completed",
-    workedFor: "Commercial Real Estate Developers",
-    coverImage: "/images/projects/ecostation/cover.jpg",
-    gallery: [
-      "/images/projects/ecostation/cover.jpg"
-    ],
-    brief:
-      "A high-density sustainable IT workplace tower engineered for maximum floor-plate efficiency, tenant modularity, and low operational carbon footprint.",
-    description: [
-      "Located in Kolkata's premier tech hub Sector V, Ecostation sets a benchmark for resource efficiency. The central core layout yields expansive column-free tenant floors of 35,000 sq.ft with high flexibility for enterprise fit-outs.",
-      "High-performance double-glazed solar low-E curtain walling dramatically lowers HVAC chiller loads while flooding interior workstations with glare-free daylight.",
-      "Rainwater harvesting, rooftop solar photovoltaic arrays, and an automated building management system deliver 34% energy savings over standard commercial baselines.",
-    ],
-    disciplines: [
-      "Commercial Workplace Architecture",
-      "IGBC Platinum Green Certification",
-      "NKDA Sanction Compliance",
-      "MEPF High-Rise Systems Design",
-      "DPR & Feasibility Study"
-    ],
-    highlights: [
-      "35,000 sq.ft column-free floor plates with central service core",
-      "Energy recovery ventilation delivering high indoor air quality (IAQ)",
-      "Automated multi-level car parking facility with EV charging infrastructure"
-    ]
-  },
-  {
-    id: "12",
     slug: "autohub-corporate",
     title: "Autohub Showroom & Corporate Headquarters",
     category: "Mixed Commercial",
@@ -463,7 +425,9 @@ export const PROJECTS: Project[] = [
     coverImage: "/images/projects/autohub/cover.jpg",
     gallery: [
       "/images/projects/autohub/cover.jpg",
-      "/images/projects/autohub/view-1.jpg"
+      "/images/projects/autohub/view-1.jpg",
+      "/images/all-images/img-1.jpg",
+      "/images/all-images/img-22.jpg"
     ],
     brief:
       "A mixed-use commercial facility combining an automotive flagship showroom, corporate offices, customer lounges, and a multi-brand servicing workshop.",
@@ -486,7 +450,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "13",
+    id: "12",
     slug: "amtala-industrial-park",
     title: "Amtala MSME Industrial Park",
     category: "MSME industrial parks",
@@ -500,7 +464,9 @@ export const PROJECTS: Project[] = [
     coverImage: "/images/projects/amtala-industrial/cover.jpg",
     gallery: [
       "/images/projects/amtala-industrial/cover.jpg",
-      "/images/projects/amtala-industrial/layout.jpg"
+      "/images/projects/amtala-industrial/layout.jpg",
+      "/images/all-images/img-8.jpg",
+      "/images/all-images/img-23.jpg"
     ],
     brief:
       "A comprehensive industrial master plan spanning 25.37 acres, featuring modular manufacturing sheds, container logistics corridors, common effluent treatment, and workers' amenities.",
@@ -523,7 +489,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "14",
+    id: "13",
     slug: "rajarhat-housing",
     title: "Rajarhat Housing Complex",
     category: "Residential: housing",
@@ -538,7 +504,8 @@ export const PROJECTS: Project[] = [
     gallery: [
       "/images/projects/rajarhat-housing/cover.jpg",
       "/images/projects/rajarhat-housing/view-1.jpg",
-      "/images/projects/rajarhat-housing/view-2.jpg"
+      "/images/projects/rajarhat-housing/view-2.jpg",
+      "/images/all-images/img-6.jpg"
     ],
     brief:
       "A master-planned residential housing enclave offering modern, affordable high-quality apartments centered around a lush central landscaped park.",
@@ -561,7 +528,7 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "15",
+    id: "14",
     slug: "estate-villa-murshidabad",
     title: "Residential Estate Villa & Gardens",
     category: "Villas",
@@ -576,7 +543,8 @@ export const PROJECTS: Project[] = [
     gallery: [
       "/images/projects/estate-villa/cover.jpg",
       "/images/projects/estate-villa/view-1.jpg",
-      "/images/projects/estate-villa/view-2.jpg"
+      "/images/projects/estate-villa/view-2.jpg",
+      "/images/all-images/img-11.jpg"
     ],
     brief:
       "A custom two-story family villa set on a private agrarian estate, designed to celebrate indoor-outdoor connectivity and cross-breezes.",
@@ -606,7 +574,6 @@ export const CATEGORIES = [
   "Health Care",
   "Hospitality",
   "Interiors",
-  "IT and office buildings",
   "Mixed Commercial",
   "MSME industrial parks",
   "Residential: housing",

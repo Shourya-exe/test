@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 // Code-split below-the-fold interactive client components for performance (TBT, LCP, Main-thread)
 const Expertise = dynamic(() => import("@/components/Expertise"), { ssr: true });
-const DialogueNature = dynamic(() => import("@/components/DialogueNature"), { ssr: true });
+
 const DialogueIndia = dynamic(() => import("@/components/DialogueIndia"), { ssr: true });
 
 export default function HomePage() {
@@ -36,24 +36,24 @@ export default function HomePage() {
       <Statistics />
 
       {/* FEATURED WORK PREVIEW GALLERY */}
-      <section className="py-24 md:py-32 bg-[#0D0C0B] border-t border-[#262420]">
+      <section className="py-24 md:py-32 bg-[#FBFBFA] border-t border-[#E7E3DA]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#262420]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E7E3DA]">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="w-8 h-[1px] bg-[#C5A85C]" />
-                <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+                <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+                <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
                   Portfolio Selection · Built & Commissioned
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-[#F7F5F0] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight">
                 Selected Works
               </h2>
             </div>
 
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors"
+              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
             >
               Explore All Projects ({PROJECTS.length})
               <ArrowUpRight className="w-4 h-4" />
@@ -66,9 +66,9 @@ export default function HomePage() {
               <Link
                 key={project.id}
                 href={`/projects/${project.slug}`}
-                className="group flex flex-col justify-between border border-[#22201C] bg-[#141311] overflow-hidden transition-all duration-500 hover:border-[#C5A85C]/60"
+                className="group flex flex-col justify-between border border-[#E7E3DA] bg-white overflow-hidden transition-all duration-500 hover:border-[#9E7D2D]/60 shadow-sm hover:shadow-md"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#0D0C0B]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#FBFBFA]">
                   <Image
                     src={project.coverImage}
                     alt={project.title}
@@ -76,27 +76,27 @@ export default function HomePage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B] via-transparent to-transparent opacity-60" />
-                  <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-widest text-[#F7F5F0] bg-[#0D0C0B]/80 backdrop-blur-sm px-2.5 py-1 border border-[#262420]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-transparent to-transparent opacity-60" />
+                  <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-widest text-[#141311] bg-[#FBFBFA]/80 backdrop-blur-sm px-2.5 py-1 border border-[#E7E3DA]">
                     {project.id}
                   </div>
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <div className="flex items-center justify-between text-[11px] font-mono text-[#A8A398]">
-                    <span className="uppercase text-[#C5A85C] tracking-wider">{project.category}</span>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[#68635A]">
+                    <span className="uppercase text-[#9E7D2D] tracking-wider">{project.category}</span>
                     <span>{project.location}</span>
                   </div>
 
-                  <h3 className="text-xl font-serif text-[#F7F5F0] leading-snug group-hover:text-[#C5A85C] transition-colors">
+                  <h3 className="text-xl font-serif text-[#141311] leading-snug group-hover:text-[#9E7D2D] transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-[#B5B0A6] line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-[#4D4942] line-clamp-2 leading-relaxed">
                     {project.tagline}
                   </p>
 
-                  <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-[#C5A85C] group-hover:text-[#F7F5F0] transition-colors">
+                  <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-[#9E7D2D] group-hover:text-[#141311] transition-colors">
                     View Project
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
@@ -110,8 +110,8 @@ export default function HomePage() {
       {/* SECTION 05 — EXPERTISE */}
       <Expertise />
 
-      {/* SECTION 06 — DIALOGUE WITH NATURE */}
-      <DialogueNature />
+
+
 
       {/* SECTION 07 — DIALOGUE WITH INDIA */}
       <DialogueIndia />

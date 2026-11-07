@@ -29,12 +29,12 @@ export default async function ProjectDetailPage({ params }: Props) {
   const relatedProjects = PROJECTS.filter((p) => p.id !== project.id && p.categorySlug === project.categorySlug).slice(0, 3);
 
   return (
-    <div className="pt-28 pb-28 bg-[#0D0C0B]">
+    <div className="pt-28 pb-28 bg-[#FBFBFA]">
       {/* Back to Projects Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 border-b border-[#262420] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 border-b border-[#E7E3DA] flex items-center justify-between">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#969188] hover:text-[#C5A85C] transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#757066] hover:text-[#9E7D2D] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           Back to All Projects
@@ -49,25 +49,25 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Project Header Info */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-[1px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+            <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
               {project.category}
             </span>
             <span className="text-[#545048]">·</span>
-            <span className="text-[11px] font-mono text-[#858178] uppercase">{project.location}</span>
+            <span className="text-[11px] font-mono text-[#7A746B] uppercase">{project.location}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#F7F5F0] tracking-tight leading-[1.08] mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight leading-[1.12] mb-4">
             {project.title}
           </h1>
 
-          <p className="text-base sm:text-xl text-[#D8BD74] font-serif max-w-4xl leading-relaxed">
+          <p className="text-base sm:text-xl text-[#8C6D24] font-serif max-w-4xl leading-relaxed">
             {project.tagline}
           </p>
 
           {project.disciplines.some((d) => d.toLowerCase().includes("igbc")) && (
-            <div className="mt-5 inline-flex items-center gap-2.5 px-4 py-2 bg-[#C5A85C]/15 border border-[#C5A85C] text-[#F7F5F0] text-xs font-mono font-bold uppercase tracking-widest">
-              <CheckCircle2 className="w-4 h-4 text-[#C5A85C]" />
+            <div className="mt-5 inline-flex items-center gap-2.5 px-4 py-2 bg-[#9E7D2D]/15 border border-[#9E7D2D] text-[#141311] text-xs font-mono font-bold uppercase tracking-widest">
+              <CheckCircle2 className="w-4 h-4 text-[#9E7D2D]" />
               <span>
                 {project.disciplines.find((d) => d.toLowerCase().includes("igbc"))}
               </span>
@@ -76,7 +76,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
 
         {/* Hero Large Cover Photograph */}
-        <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#262420] bg-[#141311] mb-16">
+        <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF] mb-16">
           <Image
             src={project.coverImage}
             alt={project.title}
@@ -92,16 +92,16 @@ export default async function ProjectDetailPage({ params }: Props) {
           {/* Main Content & Narrative (Col 8) */}
           <div className="lg:col-span-8 space-y-8">
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-[0.25em] text-[#C5A85C] mb-3">
+              <h2 className="text-xs font-mono uppercase tracking-[0.25em] text-[#9E7D2D] mb-3">
                 Architectural Brief
               </h2>
-              <p className="text-lg font-serif text-[#ECE9E1] leading-relaxed">
+              <p className="text-lg font-serif text-[#3D3933] leading-relaxed">
                 {project.brief}
               </p>
             </div>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#B5B0A6] font-light leading-relaxed">
-              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-[#C5A85C] pt-4">
+            <div className="space-y-4 text-sm sm:text-base text-[#4D4942] font-light leading-relaxed">
+              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-[#9E7D2D] pt-4">
                 Design & Engineering Narrative
               </h3>
               {project.description.map((para, i) => (
@@ -110,14 +110,14 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* Key Innovations / Highlights */}
-            <div className="p-6 bg-[#141311] border border-[#262420] space-y-3">
-              <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-[#F7F5F0]">
+            <div className="p-6 bg-[#FFFFFF] border border-[#E7E3DA] space-y-3">
+              <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-[#141311]">
                 Key Design Innovations & Specifications
               </h4>
               <ul className="space-y-2">
                 {project.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-2.5 text-xs text-[#B5B0A6]">
-                    <CheckCircle2 className="w-4 h-4 text-[#C5A85C] shrink-0 mt-0.5" />
+                  <li key={h} className="flex items-start gap-2.5 text-xs text-[#4D4942]">
+                    <CheckCircle2 className="w-4 h-4 text-[#9E7D2D] shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </li>
                 ))}
@@ -127,43 +127,43 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* Sidebar Project Facts & Data (Col 4) */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="p-6 bg-[#141311] border border-[#262420] divide-y divide-[#262420]">
+            <div className="p-6 bg-[#FFFFFF] border border-[#E7E3DA] divide-y divide-[#E7E3DA]">
               <div className="pb-4">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#78736A] block">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#827C72] block">
                   Executed For / Context
                 </span>
-                <span className="text-xs text-[#ECE9E1] font-medium mt-1 block">
+                <span className="text-xs text-[#3D3933] font-medium mt-1 block">
                   {project.workedFor}
                 </span>
               </div>
 
               <div className="py-3 flex justify-between items-center text-xs">
-                <span className="text-[#78736A] font-mono">Location</span>
-                <span className="text-[#F7F5F0] font-medium">{project.location}</span>
+                <span className="text-[#827C72] font-mono">Location</span>
+                <span className="text-[#141311] font-medium">{project.location}</span>
               </div>
 
               <div className="py-3 flex justify-between items-center text-xs">
-                <span className="text-[#78736A] font-mono">Category</span>
-                <span className="text-[#F7F5F0] font-medium">{project.category}</span>
+                <span className="text-[#827C72] font-mono">Category</span>
+                <span className="text-[#141311] font-medium">{project.category}</span>
               </div>
 
               <div className="py-3 flex justify-between items-center text-xs">
-                <span className="text-[#78736A] font-mono">Completed Year</span>
-                <span className="text-[#F7F5F0] font-medium">{project.year}</span>
+                <span className="text-[#827C72] font-mono">Completed Year</span>
+                <span className="text-[#141311] font-medium">{project.year}</span>
               </div>
 
               <div className="py-3 flex justify-between items-center text-xs">
-                <span className="text-[#78736A] font-mono">Built-up Area</span>
-                <span className="text-[#C5A85C] font-mono font-bold">{project.area}</span>
+                <span className="text-[#827C72] font-mono">Built-up Area</span>
+                <span className="text-[#9E7D2D] font-mono font-bold">{project.area}</span>
               </div>
 
               <div className="py-3 flex justify-between items-center text-xs">
-                <span className="text-[#78736A] font-mono">Status</span>
-                <span className="text-[#F7F5F0] font-medium">{project.status}</span>
+                <span className="text-[#827C72] font-mono">Status</span>
+                <span className="text-[#141311] font-medium">{project.status}</span>
               </div>
 
               <div className="pt-4">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#78736A] block mb-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#827C72] block mb-2">
                   Integrated Disciplines
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -174,8 +174,8 @@ export default async function ProjectDetailPage({ params }: Props) {
                         key={d}
                         className={`px-2 py-1 border text-[10px] font-mono ${
                           isIgbc
-                            ? "bg-[#C5A85C]/20 border-[#C5A85C] text-[#F7F5F0] font-bold"
-                            : "bg-[#1A1815] border-[#2E2B25] text-[#A8A398]"
+                            ? "bg-[#9E7D2D]/20 border-[#9E7D2D] text-[#141311] font-bold"
+                            : "bg-[#F8F6F0] border-[#DDD8CE] text-[#68635A]"
                         }`}
                       >
                         {d}
@@ -187,8 +187,8 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* Mandatory Attribution Badge */}
-            <div className="p-4 bg-[#141311] border-l-2 border-[#C5A85C] text-[11px] text-[#858178] leading-relaxed">
-              <strong className="text-[#A8A398] block uppercase text-[10px] tracking-wider mb-1">
+            <div className="p-4 bg-[#FFFFFF] border-l-2 border-[#9E7D2D] text-[11px] text-[#7A746B] leading-relaxed">
+              <strong className="text-[#68635A] block uppercase text-[10px] tracking-wider mb-1">
                 Notice & Attribution
               </strong>
               Projects shown were executed while working for real estate developers and premier design consultancies.
@@ -196,7 +196,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
             <Link
               href="/contact"
-              className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#C5A85C] text-[#0D0C0B] text-xs font-bold uppercase tracking-[0.2em] transition-colors hover:bg-[#D8BD74]"
+              className="w-full inline-flex items-center justify-center gap-2 py-3.5 bg-[#9E7D2D] text-white text-xs font-bold uppercase tracking-[0.2em] transition-colors hover:bg-[#8C6D24] shadow-md"
             >
               Enquire About Similar Project
               <ArrowUpRight className="w-4 h-4" />
@@ -206,21 +206,21 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         {/* Image Gallery Showcase */}
         {project.gallery.length > 1 && (
-          <div className="mb-24 pt-12 border-t border-[#262420]">
+          <div className="mb-24 pt-12 border-t border-[#E7E3DA]">
             <div className="flex items-center justify-between mb-8">
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#F7F5F0]">
+              <h3 className="text-2xl sm:text-3xl font-serif text-[#141311]">
                 Project Gallery & Drawings
               </h3>
-              <span className="text-xs font-mono text-[#858178]">
-                {project.gallery.length} High-Resolution Plates
+              <span className="text-xs font-mono text-[#7A746B]">
+                {Math.min(project.gallery.length, 4)} High-Resolution Plates
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.gallery.map((imgSrc, idx) => (
+              {project.gallery.slice(0, 4).map((imgSrc, idx) => (
                 <div
                   key={idx}
-                  className="relative aspect-[16/10] overflow-hidden border border-[#262420] bg-[#141311] group"
+                  className="relative aspect-[16/10] overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF] group"
                 >
                   <Image
                     src={imgSrc}
@@ -229,7 +229,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-3 right-3 px-2 py-1 bg-[#0D0C0B]/80 text-[10px] font-mono text-[#C5A85C] border border-[#262420]">
+                  <div className="absolute bottom-3 right-3 px-2 py-1 bg-[#FBFBFA]/80 text-[10px] font-mono text-[#9E7D2D] border border-[#E7E3DA]">
                     Plate 0{idx + 1}
                   </div>
                 </div>
@@ -239,35 +239,35 @@ export default async function ProjectDetailPage({ params }: Props) {
         )}
 
         {/* Previous & Next Project Navigation */}
-        <div className="pt-12 border-t border-[#262420] grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="pt-12 border-t border-[#E7E3DA] grid grid-cols-1 sm:grid-cols-2 gap-6">
           <Link
             href={`/projects/${prevProject.slug}`}
-            className="group p-6 border border-[#262420] bg-[#141311] hover:border-[#C5A85C]/60 transition-colors"
+            className="group p-6 border border-[#E7E3DA] bg-white hover:border-[#9E7D2D]/60 transition-colors shadow-sm hover:shadow-md"
           >
-            <div className="flex items-center gap-2 text-xs font-mono text-[#858178] uppercase mb-2">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#7A746B] uppercase mb-2">
               <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
               <span>Previous Project</span>
             </div>
-            <h4 className="text-xl font-serif text-[#F7F5F0] group-hover:text-[#C5A85C] transition-colors">
+            <h4 className="text-xl font-serif text-[#141311] group-hover:text-[#9E7D2D] transition-colors">
               {prevProject.title}
             </h4>
-            <span className="text-xs text-[#78736A] font-mono mt-1 block">
+            <span className="text-xs text-[#827C72] font-mono mt-1 block">
               {prevProject.category} · {prevProject.location}
             </span>
           </Link>
 
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="group p-6 border border-[#262420] bg-[#141311] hover:border-[#C5A85C]/60 transition-colors text-right"
+            className="group p-6 border border-[#E7E3DA] bg-white hover:border-[#9E7D2D]/60 transition-colors text-right shadow-sm hover:shadow-md"
           >
-            <div className="flex items-center justify-end gap-2 text-xs font-mono text-[#858178] uppercase mb-2">
+            <div className="flex items-center justify-end gap-2 text-xs font-mono text-[#7A746B] uppercase mb-2">
               <span>Next Project</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </div>
-            <h4 className="text-xl font-serif text-[#F7F5F0] group-hover:text-[#C5A85C] transition-colors">
+            <h4 className="text-xl font-serif text-[#141311] group-hover:text-[#9E7D2D] transition-colors">
               {nextProject.title}
             </h4>
-            <span className="text-xs text-[#78736A] font-mono mt-1 block">
+            <span className="text-xs text-[#827C72] font-mono mt-1 block">
               {nextProject.category} · {nextProject.location}
             </span>
           </Link>

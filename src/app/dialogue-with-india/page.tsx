@@ -8,22 +8,22 @@ import { INDIA_PILLARS } from "@/data/studio";
 
 export default function DialogueIndiaPage() {
   return (
-    <div className="pt-32 pb-28 bg-[#0D0C0B]">
+    <div className="pt-32 pb-28 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16 pb-8 border-b border-[#262420]">
+        <div className="mb-16 pb-8 border-b border-[#E7E3DA]">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-[1px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+            <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
               Cultural Context · Vernacular Dialectics
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#F7F5F0] tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight mb-4">
             Dialogue with India
           </h1>
 
-          <p className="text-base sm:text-lg text-[#858178] max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#7A746B] max-w-3xl leading-relaxed">
             Engaging in a design dialogue with India is akin to embarking on a journey through a kaleidoscope of sacred geometries, vernacular codes, and regional microclimates woven across millennia.
           </p>
         </div>
@@ -34,31 +34,31 @@ export default function DialogueIndiaPage() {
             <div
               key={pillar.id}
               id={pillar.id}
-              className="scroll-mt-32 pt-8 border-t border-[#262420]"
+              className="scroll-mt-32 pt-8 border-t border-[#E7E3DA]"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div className={`lg:col-span-6 space-y-4 ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#C5A85C] uppercase tracking-widest font-semibold">
+                    <span className="text-xs font-mono text-[#9E7D2D] uppercase tracking-widest font-semibold">
                       THEME 0{idx + 1}
                     </span>
-                    <span className="w-6 h-[1px] bg-[#C5A85C]" />
-                    <span className="text-xs font-mono text-[#78736A] uppercase">
+                    <span className="w-6 h-[1px] bg-[#9E7D2D]" />
+                    <span className="text-xs font-mono text-[#827C72] uppercase">
                       Indian Built Culture
                     </span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-4xl font-serif text-[#F7F5F0] leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-serif text-[#141311] leading-tight">
                     {pillar.title}: {pillar.subhead}
                   </h2>
 
-                  <p className="text-sm sm:text-base text-[#B5B0A6] font-light leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#4D4942] font-light leading-relaxed">
                     {pillar.description}
                   </p>
 
                   {pillar.id === "pattern" && (
-                    <div className="p-4 bg-[#141311] border border-[#22201C] space-y-2 text-xs text-[#858178]">
-                      <strong className="text-[#C5A85C] block uppercase font-mono tracking-wider">
+                    <div className="p-4 bg-[#FFFFFF] border border-[#E7E3DA] space-y-2 text-xs text-[#7A746B]">
+                      <strong className="text-[#9E7D2D] block uppercase font-mono tracking-wider">
                         Sacred Geometry & Symbolism
                       </strong>
                       <p>
@@ -68,7 +68,7 @@ export default function DialogueIndiaPage() {
                   )}
 
                   {pillar.id === "people" && (
-                    <div className="p-4 bg-[#141311] border border-[#22201C] text-xs text-[#D8BD74] italic font-serif">
+                    <div className="p-4 bg-[#FFFFFF] border border-[#E7E3DA] text-xs text-[#8C6D24] italic font-serif">
                       &quot;Men first make buildings and then the buildings build men.&quot;
                     </div>
                   )}
@@ -76,14 +76,14 @@ export default function DialogueIndiaPage() {
                   <div className="pt-2">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors"
+                      className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
                     >
                       Commission Vernacular Architecture →
                     </Link>
                   </div>
                 </div>
 
-                <div className={`lg:col-span-6 relative aspect-[16/10] overflow-hidden border border-[#262420] bg-[#141311] ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div className={`lg:col-span-6 relative aspect-[16/10] overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF] ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
                   <Image
                     src={pillar.image}
                     alt={pillar.title}
@@ -91,8 +91,8 @@ export default function DialogueIndiaPage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B]/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-widest text-[#F7F5F0] bg-[#0D0C0B]/80 px-2 py-1 border border-[#262420]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA]/60 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-widest text-[#141311] bg-[#FBFBFA]/80 px-2 py-1 border border-[#E7E3DA]">
                     Plate 0{idx + 1} · {pillar.title}
                   </div>
                 </div>

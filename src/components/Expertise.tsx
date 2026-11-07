@@ -31,18 +31,18 @@ export default function Expertise() {
   const activeService = SERVICES.find((s) => s.id === activeServiceId) || SERVICES[0];
 
   return (
-    <section id="expertise" className="relative py-24 md:py-32 bg-[#0D0C0B]">
+    <section id="expertise" className="relative py-24 md:py-32 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#262420]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E7E3DA]">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[1px] bg-[#C5A85C]" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+              <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
                 Section 05 · Core Capabilities
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-[#F7F5F0] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight">
               Expertise
             </h2>
           </div>
@@ -50,14 +50,14 @@ export default function Expertise() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="px-3 py-1.5 border border-[#262420] bg-[#141311] text-[10px] font-mono uppercase tracking-widest text-[#969188] hover:text-[#C5A85C] hover:border-[#C5A85C] transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 border border-[#E7E3DA] bg-[#FFFFFF] text-[10px] font-mono uppercase tracking-widest text-[#757066] hover:text-[#9E7D2D] hover:border-[#9E7D2D] transition-colors flex items-center gap-1.5"
               aria-label="Toggle auto preview"
             >
               {isAutoPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
               <span>{isAutoPlaying ? "Auto Cycle: ON" : "Auto Cycle: OFF"}</span>
             </button>
 
-            <p className="hidden md:block max-w-xs text-xs text-[#858178] leading-relaxed">
+            <p className="hidden md:block max-w-xs text-xs text-[#7A746B] leading-relaxed">
               Eleven multidisciplinary services operating from concept through handover.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function Expertise() {
         {/* Master Interactive Expertise Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column: Numbered Service Rows */}
-          <div className="lg:col-span-7 divide-y divide-[#262420] border-y border-[#262420]">
+          <div className="lg:col-span-7 divide-y divide-[#E7E3DA] border-y border-[#E7E3DA]">
             {SERVICES.map((service) => {
               const isActive = service.id === activeServiceId;
               return (
@@ -81,14 +81,14 @@ export default function Expertise() {
                     setActiveServiceId(service.id);
                   }}
                   className={`group py-5 px-3 transition-all duration-300 cursor-pointer ${
-                    isActive ? "bg-[#141311] -mx-3 px-6 border-l-2 border-[#C5A85C]" : "hover:bg-[#12110F]"
+                    isActive ? "bg-[#FFFFFF] -mx-3 px-6 border-l-2 border-[#9E7D2D]" : "hover:bg-[#F4F1EA]"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-baseline gap-4 sm:gap-6">
                       <span
                         className={`text-xs font-mono tracking-widest transition-colors ${
-                          isActive ? "text-[#C5A85C] font-bold" : "text-[#545048] group-hover:text-[#969188]"
+                          isActive ? "text-[#9E7D2D] font-bold" : "text-[#545048] group-hover:text-[#757066]"
                         }`}
                       >
                         {service.number}
@@ -96,12 +96,12 @@ export default function Expertise() {
                       <div>
                         <h3
                           className={`text-base sm:text-xl font-sans uppercase font-medium tracking-wide transition-colors ${
-                            isActive ? "text-[#F7F5F0]" : "text-[#B5B0A6] group-hover:text-[#F7F5F0]"
+                            isActive ? "text-[#141311]" : "text-[#4D4942] group-hover:text-[#141311]"
                           }`}
                         >
                           {service.title}
                         </h3>
-                        <p className="mt-1 text-xs text-[#858178] leading-relaxed max-w-xl">
+                        <p className="mt-1 text-xs text-[#7A746B] leading-relaxed max-w-xl">
                           {service.shortDesc}
                         </p>
                       </div>
@@ -110,7 +110,7 @@ export default function Expertise() {
                     <ArrowUpRight
                       className={`w-4 h-4 shrink-0 transition-all duration-300 ${
                         isActive
-                          ? "text-[#C5A85C] opacity-100 rotate-0"
+                          ? "text-[#9E7D2D] opacity-100 rotate-0"
                           : "text-[#545048] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
                       }`}
                     />
@@ -122,7 +122,7 @@ export default function Expertise() {
 
           {/* Right Column: Dynamic Preview Frame with Smooth Transitions */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <div className="relative aspect-[4/3] sm:aspect-[16/12] w-full overflow-hidden border border-[#262420] bg-[#141311]">
+            <div className="relative aspect-[4/3] sm:aspect-[16/12] w-full overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeService.id}
@@ -139,26 +139,26 @@ export default function Expertise() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/40 to-transparent" />
                 </motion.div>
               </AnimatePresence>
 
               {/* Foreground Details Card */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/90 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/90 to-transparent">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[10px] font-mono tracking-widest text-[#C5A85C] uppercase">
+                  <span className="text-[10px] font-mono tracking-widest text-[#9E7D2D] uppercase">
                     Service {activeService.number} Details
                   </span>
                 </div>
-                <h4 className="text-xl font-serif text-[#F7F5F0] mb-3">
+                <h4 className="text-xl font-serif text-[#141311] mb-3">
                   {activeService.title}
                 </h4>
 
                 {/* Key Deliverables Bullet Points */}
                 <ul className="space-y-1.5 mb-4">
                   {activeService.deliverables.map((d) => (
-                    <li key={d} className="flex items-center gap-2 text-[11px] text-[#B5B0A6]">
-                      <CheckCircle2 className="w-3 h-3 text-[#C5A85C] shrink-0" />
+                    <li key={d} className="flex items-center gap-2 text-[11px] text-[#4D4942]">
+                      <CheckCircle2 className="w-3 h-3 text-[#9E7D2D] shrink-0" />
                       <span>{d}</span>
                     </li>
                   ))}
@@ -166,7 +166,7 @@ export default function Expertise() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors"
+                  className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
                 >
                   Commission This Service
                   <ArrowUpRight className="w-3.5 h-3.5" />

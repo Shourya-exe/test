@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0D0C0B;
-  --surface: #141311;
-  --surface-hover: #1E1C19;
-  --ink: #F7F5F0;
-  --mute: #969188;
-  --gold: #C5A85C;
-  --gold-hover: #D8BD74;
-  --line: #262420;
-  --line-light: #38352F;
+  --bg: #FBFBFA;
+  --surface: #FFFFFF;
+  --surface-hover: #F3EFE8;
+  --ink: #141311;
+  --mute: #68635A;
+  --gold: #9E7D2D;
+  --gold-hover: #8C6D24;
+  --line: #E7E3DA;
+  --line-light: #ECE8E0;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -34,20 +34,20 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D0C0B;
+  background: #F4F1EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2C2A26;
+  background: #D4CEBF;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A85C;
+  background: #9E7D2D;
 }
 
 /* Selection Color */
 ::selection {
-  background: #C5A85C;
-  color: #0D0C0B;
+  background: #9E7D2D;
+  color: #FFFFFF;
 }
 
 /* Flip Box CSS 3D */
@@ -89,7 +89,7 @@ body {
 }
 
 .text-stroke-gold {
-  -webkit-text-stroke: 1px rgba(197, 168, 92, 0.4);
+  -webkit-text-stroke: 1px rgba(158, 125, 45, 0.4);
   color: transparent;
 }
 

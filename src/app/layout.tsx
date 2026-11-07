@@ -24,7 +24,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0D0C0B",
+  themeColor: "#FBFBFA",
 };
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable} dark`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable} light`}>
       <head>
         <meta
           name="description"
@@ -76,7 +76,7 @@ export default function RootLayout({
           fetchPriority="high"
         />
       </head>
-      <body className="min-h-screen bg-[#0D0C0B] text-[#F7F5F0] flex flex-col antialiased selection:bg-[#C5A85C] selection:text-[#0D0C0B]">
+      <body className="min-h-screen bg-[#FBFBFA] text-[#141311] flex flex-col antialiased selection:bg-[#9E7D2D] selection:text-white">
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

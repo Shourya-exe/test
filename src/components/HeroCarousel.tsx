@@ -246,13 +246,13 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative w-full h-[94vh] min-h-[660px] max-h-[1100px] overflow-hidden bg-[#0D0C0B] select-none"
+      className="relative w-full h-[94vh] min-h-[660px] max-h-[1100px] overflow-hidden bg-[#FBFBFA] select-none"
       aria-label="Architectural Portfolio Hero"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Background Image Carousel with Ken-Burns and Crossfade */}
-      <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide.id}
           initial={hasMounted ? { opacity: 0, scale: 1.05 } : false}
@@ -273,11 +273,22 @@ export default function HeroCarousel() {
             className="object-cover object-center"
           />
 
-          {/* Reference Architectural Lighting Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/35 to-[#0D0C0B]/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D0C0B]/95 via-[#0D0C0B]/40 to-transparent w-full md:w-3/4" />
+          {/* Crisp Architectural Photo with zero white haze */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
         </motion.div>
       </AnimatePresence>
+
+      {/* Instant Cache Preload for Next Slide */}
+      <div className="hidden" aria-hidden="true">
+        <Image
+          src={HERO_SLIDES[(currentIndex + 1) % HERO_SLIDES.length].image}
+          alt="Preload next slide"
+          width={1920}
+          height={1080}
+          priority
+          quality={80}
+        />
+      </div>
 
       {/* Hero Content Overlay (Pure Editorial Layout matching Salient Design Studio) */}
       <div className="relative z-20 h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-between pt-32 pb-16">
@@ -288,14 +299,14 @@ export default function HeroCarousel() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex items-center gap-3"
+            className="inline-flex items-center gap-3 px-3.5 py-1.5 bg-[#FAF9F5]/80 backdrop-blur-md border border-[#E2DDD3] shadow-sm"
           >
-            <span className="w-8 h-[1.5px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-[#C5A85C] font-semibold">
+            <span className="w-6 h-[1.5px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-[#9E7D2D] font-semibold">
               {currentSlide.category}
             </span>
-            <span className="text-[11px] text-[#6E675A]">·</span>
-            <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#C5BFB5]">
+            <span className="text-[11px] text-[#8C867B]">·</span>
+            <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#3D3933] font-medium">
               {currentSlide.location}
             </span>
           </motion.div>
@@ -312,7 +323,7 @@ export default function HeroCarousel() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-4"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#F7F5F0] leading-[1.08]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-serif font-medium tracking-tight text-[#141311] leading-[1.12]">
                 {currentSlide.title}
               </h1>
 
@@ -320,7 +331,7 @@ export default function HeroCarousel() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="text-xs sm:text-sm md:text-base font-sans uppercase tracking-[0.28em] text-[#D8BD74] font-normal"
+                className="text-xs sm:text-sm font-sans uppercase tracking-[0.26em] text-[#8C6D24] font-medium"
               >
                 {currentSlide.subtitle}
               </motion.p>
@@ -335,30 +346,30 @@ export default function HeroCarousel() {
                 {/* Primary Button with Live Shimmer Effect */}
                 <Link
                   href={`/projects/${currentSlide.projectSlug}`}
-                  className="relative group overflow-hidden px-7 py-4 bg-[#F7F5F0] text-[#0D0C0B] text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#C5A85C] hover:text-[#0D0C0B] shadow-2xl flex items-center gap-3"
+                  className="relative group overflow-hidden px-6 py-3.5 bg-[#141311] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#9E7D2D] shadow-md flex items-center gap-3"
                 >
-                  <span className="relative z-10">Explore Project</span>
-                  <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1.5" />
+                  <span className="relative z-10 text-white">Explore Project</span>
+                  <ArrowRight className="w-4 h-4 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1.5" />
 
-                  {/* Continuous Sheen Sweep Animation (Pure GPU Composited CSS) */}
-                  <div className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none animate-shimmer-sweep" />
+                  {/* Continuous Sheen Sweep Animation */}
+                  <div className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none animate-shimmer-sweep" />
                 </Link>
 
-                {/* Secondary Button with Active Border Draw */}
+                {/* Secondary Button: Semi-translucent Frosted Glass ("in middle of opaque and translucent") */}
                 <Link
                   href="/projects"
-                  className="group relative px-7 py-4 border border-[#423E36] bg-[#0D0C0B]/40 backdrop-blur-sm text-[#ECE9E1] text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 hover:border-[#C5A85C] hover:text-[#C5A85C]"
+                  className="group relative px-6 py-3.5 border border-[#C5A85C]/70 bg-[#FAF9F5]/80 backdrop-blur-md text-[#141311] text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#FAF9F5] hover:border-[#9E7D2D] shadow-sm"
                 >
-                  <span className="relative z-10">All Projects</span>
-                  <div className="absolute inset-0 border border-[#C5A85C]/0 group-hover:border-[#C5A85C]/60 transition-all duration-300 pointer-events-none" />
+                  <span className="relative z-10 text-[#141311]">All Projects</span>
                 </Link>
 
                 {/* Direct Action Link to Consultation */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors py-2 px-3"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#141311] bg-[#FAF9F5]/75 hover:bg-[#FAF9F5] backdrop-blur-md border border-[#DCD6C9] hover:border-[#9E7D2D] hover:text-[#9E7D2D] transition-all py-3.5 px-4 shadow-sm"
                 >
-                  Start Inquiry →
+                  <span>Start Inquiry</span>
+                  <span>→</span>
                 </Link>
               </motion.div>
             </motion.div>
@@ -366,13 +377,13 @@ export default function HeroCarousel() {
         </div>
 
         {/* Minimal Editorial Slide Number Indicator */}
-        <div className="flex items-center justify-between text-xs text-[#A8A398] font-mono">
-          <div className="flex items-center gap-3">
-            <span className="text-xl font-light text-[#C5A85C] font-mono">
+        <div className="flex items-center justify-between text-xs text-[#68635A] font-mono">
+          <div className="inline-flex items-center gap-3 px-3.5 py-1.5 bg-[#FAF9F5]/80 backdrop-blur-md border border-[#E2DDD3] shadow-sm">
+            <span className="text-base font-semibold text-[#9E7D2D]">
               {currentSlide.id}
             </span>
-            <span className="text-sm text-[#8E8A80]">/</span>
-            <span className="text-xs text-[#A8A398]">
+            <span className="text-xs text-[#8E8A80]">/</span>
+            <span className="text-xs text-[#68635A]">
               {HERO_SLIDES.length < 10 ? `0${HERO_SLIDES.length}` : HERO_SLIDES.length}
             </span>
           </div>

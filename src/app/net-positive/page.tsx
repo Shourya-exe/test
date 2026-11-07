@@ -10,58 +10,58 @@ export default function NetPositivePage() {
     {
       title: "The Limitlessness Within A Limit",
       desc: "Constraints in architecture—site setbacks, municipal FAR, extreme heatwaves, and tight budgets—are not impediments. They are the generative boundary conditions from which pure architectural innovation blooms.",
-      icon: <Compass className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Compass className="w-5 h-5 text-[#9E7D2D]" />,
     },
     {
       title: "The Journey of Realisation",
       desc: "Design is an art of discovery, not arbitrary imposition. Research, humility, and site listening guide our pencils from initial massing diagrams to final occupancy commissioning.",
-      icon: <Sparkles className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Sparkles className="w-5 h-5 text-[#9E7D2D]" />,
     },
     {
       title: "Technology for Sustainability",
       desc: "We deploy advanced thermodynamic simulation, solar path algorithms, and rainwater percolation modeling not as superficial tech gimmicks, but to ensure minimal operational carbon over a 100-year lifecycle.",
-      icon: <Sun className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Sun className="w-5 h-5 text-[#9E7D2D]" />,
     },
     {
       title: "Keep Nature First",
       desc: "Before a single foundation footing is excavated, existing mature trees, surface water drainages, and wind vectors are meticulously mapped and woven into the building geometry.",
-      icon: <Leaf className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Leaf className="w-5 h-5 text-[#9E7D2D]" />,
     },
     {
       title: "The 5S Philosophy",
       desc: "Rooted in Vedic sciences: Save, Support, Simplify, Sustain, and Sanctify. Every wall, joinery detail, and service duct must satisfy these five qualitative touchstones.",
-      icon: <Shield className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Shield className="w-5 h-5 text-[#9E7D2D]" />,
     },
     {
       title: "India is About Continuity",
       desc: "Our architectural heritage is not locked in a museum; it is a living river of contextual wisdom that provides modern architecture with dignity, cultural resonance, and climatic resilience.",
-      icon: <Compass className="w-5 h-5 text-[#C5A85C]" />,
+      icon: <Compass className="w-5 h-5 text-[#9E7D2D]" />,
     },
   ];
 
   return (
-    <div className="pt-32 pb-28 bg-[#0D0C0B]">
+    <div className="pt-32 pb-28 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <div className="mb-16 pb-8 border-b border-[#262420]">
+        <div className="mb-16 pb-8 border-b border-[#E7E3DA]">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-[1px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+            <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
               Philosophy · Beyond Sustainability
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#F7F5F0] tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight mb-4">
             Beyond Sustainability
           </h1>
 
-          <p className="text-base sm:text-lg text-[#858178] max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#7A746B] max-w-3xl leading-relaxed">
             Creating regenerative spaces that restore nature, conserve resources and enhance the quality of life for generations to come.
           </p>
         </div>
 
         {/* Hero Visual */}
-        <div className="relative aspect-[21/9] min-h-[320px] w-full overflow-hidden border border-[#262420] mb-20 bg-[#141311]">
+        <div className="relative aspect-[21/9] min-h-[320px] w-full overflow-hidden border border-[#E7E3DA] mb-20 bg-[#FFFFFF]">
           <Image
             src="/images/all-images/img-17.jpg"
             alt="Beyond Sustainability regenerative architecture"
@@ -70,15 +70,15 @@ export default function NetPositivePage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/40 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 max-w-3xl">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A85C] block mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9E7D2D] block mb-2">
               Regenerative Built Systems
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif text-[#F7F5F0]">
+            <h2 className="text-2xl sm:text-3xl font-serif text-[#141311]">
               Save · Support · Simplify · Sustain
             </h2>
-            <p className="text-xs sm:text-sm text-[#B5B0A6] mt-2 font-light">
+            <p className="text-xs sm:text-sm text-[#4D4942] mt-2 font-light">
               With integration of Vedic science into architectural thinking, buildings transform from energy consumers into living ecological contributors.
             </p>
           </div>
@@ -89,17 +89,17 @@ export default function NetPositivePage() {
           {philosophies.map((p) => (
             <div
               key={p.title}
-              className="p-8 bg-[#141311] border border-[#22201C] flex flex-col justify-between space-y-4"
+              className="p-8 bg-[#FFFFFF] border border-[#E7E3DA] flex flex-col justify-between space-y-4"
             >
               <div>
-                <div className="p-2.5 bg-[#1C1A17] border border-[#2A2722] w-fit mb-4">
+                <div className="p-2.5 bg-[#FAF9F5] border border-[#E7E3DA] text-[#9E7D2D] w-fit mb-4">
                   {p.icon}
                 </div>
-                <h3 className="text-xl font-serif text-[#F7F5F0] mb-2">{p.title}</h3>
-                <p className="text-xs text-[#858178] leading-relaxed font-light">{p.desc}</p>
+                <h3 className="text-xl font-serif text-[#141311] mb-2">{p.title}</h3>
+                <p className="text-xs text-[#7A746B] leading-relaxed font-light">{p.desc}</p>
               </div>
 
-              <div className="pt-2 text-[10px] font-mono uppercase tracking-wider text-[#C5A85C]">
+              <div className="pt-2 text-[10px] font-mono uppercase tracking-wider text-[#9E7D2D]">
                 Net Positive Principle
               </div>
             </div>
@@ -107,19 +107,19 @@ export default function NetPositivePage() {
         </div>
 
         {/* Call to Action */}
-        <div className="p-8 sm:p-12 border border-[#262420] bg-[#141311] flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 sm:p-12 border border-[#E7E3DA] bg-[#FFFFFF] flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-serif text-[#F7F5F0]">
+            <h3 className="text-2xl font-serif text-[#141311]">
               Commission a Net Positive Development
             </h3>
-            <p className="text-xs text-[#858178] mt-1 max-w-xl">
+            <p className="text-xs text-[#7A746B] mt-1 max-w-xl">
               From daylight simulations and passive cooling verandas to rainwater aquifer replenishment and IGBC certification filings.
             </p>
           </div>
 
           <Link
             href="/contact"
-            className="px-6 py-3.5 bg-[#C5A85C] text-[#0D0C0B] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#D8BD74] transition-colors shrink-0"
+            className="px-6 py-3.5 bg-[#9E7D2D] text-[#FBFBFA] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#8C6D24] transition-colors shrink-0"
           >
             Start Conversation
           </Link>

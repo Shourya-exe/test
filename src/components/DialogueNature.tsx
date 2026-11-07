@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Leaf, Sparkles, RefreshCw, Sun } from "lucide-react";
 import { NATURE_PILLARS } from "@/data/studio";
-import ArchitecturalVideoPlayer from "./ArchitecturalVideoPlayer";
 
 export default function DialogueNature() {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
@@ -13,41 +12,41 @@ export default function DialogueNature() {
   const getPillarIcon = (keyword: string) => {
     switch (keyword) {
       case "RETAIN":
-        return <Leaf className="w-5 h-5 text-[#C5A85C]" />;
+        return <Leaf className="w-5 h-5 text-[#9E7D2D]" />;
       case "REVERE":
-        return <Sun className="w-5 h-5 text-[#C5A85C]" />;
+        return <Sun className="w-5 h-5 text-[#9E7D2D]" />;
       case "REGENERATE":
-        return <RefreshCw className="w-5 h-5 text-[#C5A85C]" />;
+        return <RefreshCw className="w-5 h-5 text-[#9E7D2D]" />;
       case "REJOICE":
-        return <Sparkles className="w-5 h-5 text-[#C5A85C]" />;
+        return <Sparkles className="w-5 h-5 text-[#9E7D2D]" />;
       default:
-        return <Leaf className="w-5 h-5 text-[#C5A85C]" />;
+        return <Leaf className="w-5 h-5 text-[#9E7D2D]" />;
     }
   };
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#12110F] border-t border-[#262420] overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-[#F4F1EA] border-t border-[#E7E3DA] overflow-hidden">
       {/* Background Decorative Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#262420_1px,transparent_1px)] [background-size:32px_32px] opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#E7E3DA_1px,transparent_1px)] [background-size:32px_32px] opacity-25 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#262420]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E7E3DA]">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[1px] bg-[#C5A85C]" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+              <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
                 Section 06 · Environmental Philosophy
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-normal text-[#F7F5F0] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight">
               Dialogue with Nature
             </h2>
           </div>
 
           <Link
-            href="/dialogue-with-nature"
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors"
+            href="/beyond-sustainability"
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
           >
             Explore Philosophy In Full
             <ArrowUpRight className="w-4 h-4" />
@@ -72,7 +71,7 @@ export default function DialogueNature() {
                   }`}
                 >
                   {/* Front Card: Architectural Photograph with Bold Keyword */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden border border-[#262420] bg-[#141311] overflow-hidden group">
+                  <div className="absolute inset-0 w-full h-full backface-hidden border border-[#E7E3DA] bg-[#FFFFFF] overflow-hidden group">
                     <Image
                       src={pillar.image}
                       alt={pillar.title}
@@ -80,24 +79,24 @@ export default function DialogueNature() {
                       sizes="(max-width: 768px) 100vw, 25vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C0B] via-[#0D0C0B]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/50 to-transparent" />
 
                     <div className="absolute inset-0 p-6 flex flex-col justify-between">
                       <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs text-[#C5A85C] font-semibold">
+                        <span className="font-mono text-xs text-[#9E7D2D] font-semibold">
                           0{pillar.number}
                         </span>
                         {getPillarIcon(pillar.keyword)}
                       </div>
 
                       <div>
-                        <h3 className="text-2xl sm:text-3xl font-serif font-medium uppercase tracking-wider text-[#F7F5F0] mb-2">
+                        <h3 className="text-xl sm:text-2xl font-serif font-medium uppercase tracking-wider text-[#141311] mb-2">
                           {pillar.keyword}
                         </h3>
-                        <p className="text-xs text-[#B5B0A6] font-light line-clamp-2">
+                        <p className="text-xs text-[#4D4942] font-light line-clamp-2">
                           {pillar.title}
                         </p>
-                        <span className="mt-3 inline-block text-[10px] font-mono uppercase tracking-widest text-[#C5A85C]">
+                        <span className="mt-3 inline-block text-[10px] font-mono uppercase tracking-widest text-[#9E7D2D]">
                           Hover to reveal →
                         </span>
                       </div>
@@ -105,27 +104,27 @@ export default function DialogueNature() {
                   </div>
 
                   {/* Back Card: Ancient Vedic Citation & Philosophy */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 border border-[#C5A85C]/60 bg-[#161513] p-7 flex flex-col justify-between text-[#ECE9E1]">
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 border border-[#9E7D2D]/60 bg-[#FAF9F5] p-7 flex flex-col justify-between text-[#141311] shadow-md">
                     <div>
-                      <div className="flex items-center justify-between border-b border-[#2C2A26] pb-3 mb-4">
-                        <span className="font-mono text-xs text-[#C5A85C]">
+                      <div className="flex items-center justify-between border-b border-[#E7E3DA] pb-3 mb-4">
+                        <span className="font-mono text-xs text-[#9E7D2D] font-semibold">
                           PILLAR 0{pillar.number}
                         </span>
-                        <h3 className="font-sans font-bold text-sm uppercase tracking-widest text-[#F7F5F0]">
+                        <h3 className="font-sans font-bold text-sm uppercase tracking-widest text-[#141311]">
                           {pillar.keyword}
                         </h3>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#B5B0A6] leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-[#4D4942] leading-relaxed mb-4">
                         {pillar.description}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#2C2A26]">
-                      <span className="text-[10px] uppercase font-mono tracking-wider text-[#C5A85C] block mb-1">
+                    <div className="pt-3 border-t border-[#E7E3DA]">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-[#9E7D2D] block mb-1 font-semibold">
                         Sanskrit Axiom
                       </span>
-                      <p className="text-xs italic text-[#D8BD74] font-serif leading-snug">
+                      <p className="text-xs italic text-[#8C6D24] font-serif leading-snug">
                         &quot;{pillar.quote}&quot;
                       </p>
                     </div>
@@ -136,46 +135,29 @@ export default function DialogueNature() {
           })}
         </div>
 
-        {/* 16:9 ARCHITECTURAL VIDEO (Faithfully replicating Salient Design Studio in 16:9 ratio) */}
-        <div className="mb-16">
-          <div className="mb-4 flex items-center justify-between text-xs font-mono text-[#858178]">
-            <span className="uppercase text-[#C5A85C] tracking-widest">
-              Biophilic Motion Study · 16:9 Presentation
-            </span>
-            <span>Natural Harmony in Architecture</span>
-          </div>
-
-          <ArchitecturalVideoPlayer
-            src="/videos/dialogue-with-nature.mp4"
-            poster="/images/nature/nature-hero.jpg"
-            caption="Salient Architectural Motion Study"
-            title="Living Ecological Equilibrium"
-          />
-        </div>
-
-        {/* Editorial Sustainability Manifesto (Replicating Salient verbatim) */}
-        <div className="p-8 sm:p-14 bg-[#141311] border border-[#262420] relative">
+        {/* Editorial Sustainability Manifesto */}
+        <div className="p-8 sm:p-14 bg-[#FFFFFF] border border-[#E7E3DA] relative shadow-sm">
           <div className="max-w-3xl space-y-4">
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#C5A85C] block">
+            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#9E7D2D] block font-semibold">
               Core Studio Manifesto
             </span>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#F7F5F0] leading-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#141311] leading-tight">
               We have Embraced Sustainability
             </h3>
-            <p className="text-sm sm:text-base text-[#B5B0A6] leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-[#4D4942] leading-relaxed font-light">
               ...not merely as a trending concept or buzzword, but as a fundamental value that underpins everything we do. It serves as the guiding principle for all our decisions, shaping the way we operate, innovate, and interact with the world around us. From the smallest daily choices to our long-term strategic architectural goals.
             </p>
 
             <div className="pt-4 flex flex-wrap items-center gap-6">
               <Link
-                href="/dialogue-with-nature"
-                className="px-6 py-3 bg-[#F7F5F0] text-[#0D0C0B] text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#C5A85C]"
+                href="/beyond-sustainability"
+                className="px-6 py-3 bg-[#141311] text-white text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#9E7D2D] shadow-sm"
               >
                 Read Nature Thesis
               </Link>
               <Link
                 href="/projects"
-                className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#C5A85C] hover:text-[#F7F5F0] transition-colors"
+                className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
               >
                 View Green Certified Buildings →
               </Link>

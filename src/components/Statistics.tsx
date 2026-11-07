@@ -56,38 +56,38 @@ function AnimatedCounter({ finalValue, suffix = "", duration = 1400 }: CounterPr
   }, [finalValue, duration]);
 
   return (
-    <span ref={containerRef} className="font-mono text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#F7F5F0]">
+    <span ref={containerRef} className="font-mono text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-[#141311]">
       <span ref={numRef}>0</span>
-      <span className="text-[#C5A85C] ml-0.5">{suffix}</span>
+      <span className="text-[#9E7D2D] ml-0.5">{suffix}</span>
     </span>
   );
 }
 
 export default function Statistics() {
   return (
-    <section className="relative bg-[#12110F] border-y border-[#262420] py-16 md:py-24">
+    <section className="relative bg-[#F4F1EA] border-y border-[#E7E3DA] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header Label */}
         <div className="flex items-center justify-between mb-12">
           <div className="flex items-center gap-3">
-            <span className="w-8 h-[1px] bg-[#C5A85C]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#C5A85C]">
+            <span className="w-8 h-[1px] bg-[#9E7D2D]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
               By The Numbers · Practice Metrics
             </span>
           </div>
-          <span className="text-[11px] font-mono text-[#A8A398] hidden sm:inline-block">
+          <span className="text-[11px] font-mono text-[#68635A] hidden sm:inline-block">
             VERIFIED CREDENTIALS
           </span>
         </div>
 
         {/* 4 Primary Highlight Numbers (Salient Reference Style) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-16 border-b border-[#22201C]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-16 border-b border-[#E7E3DA]">
           {STATISTICS.slice(0, 4).map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col space-y-2 border-l border-[#2E2B25] pl-6 hover:border-[#C5A85C] transition-colors"
+              className="flex flex-col space-y-2 border-l border-[#DDD8CE] pl-6 hover:border-[#9E7D2D] transition-colors"
             >
-              <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#C5A85C]">
+              <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#9E7D2D]">
                 {stat.label}
               </div>
 
@@ -98,7 +98,7 @@ export default function Statistics() {
                 />
               </div>
 
-              <p className="text-xs text-[#ECE9E1] leading-relaxed font-sans">
+              <p className="text-xs text-[#3D3933] leading-relaxed font-sans">
                 {stat.sublabel}
               </p>
             </div>
@@ -106,19 +106,19 @@ export default function Statistics() {
         </div>
 
         {/* Supporting Architectural Regulatory Credentials Footer Strip */}
-        <div className="pt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-[#A8A398]">
+        <div className="pt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-[#68635A]">
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#C5A85C]" />
-            <span className="font-mono text-[11px] uppercase tracking-wider text-[#F7F5F0]">
+            <span className="w-2 h-2 rounded-full bg-[#9E7D2D]" />
+            <span className="font-mono text-[11px] uppercase tracking-wider text-[#141311]">
               Statutory Authority Registrations
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 font-mono text-[11px] text-[#A8A398]">
-            <span className="border-b border-[#2E2B25] pb-0.5">Council of Architecture (COA)</span>
-            <span className="border-b border-[#2E2B25] pb-0.5">KMC Licensed Class-1</span>
-            <span className="border-b border-[#2E2B25] pb-0.5">BDA / BMC Empanelled</span>
-            <span className="border-b border-[#2E2B25] pb-0.5">IGBC AP Member</span>
+          <div className="flex flex-wrap items-center gap-6 font-mono text-[11px] text-[#68635A]">
+            <span className="border-b border-[#DDD8CE] pb-0.5">Council of Architecture (COA)</span>
+            <span className="border-b border-[#DDD8CE] pb-0.5">KMC Licensed Class-1</span>
+            <span className="border-b border-[#DDD8CE] pb-0.5">BDA / BMC Empanelled</span>
+            <span className="border-b border-[#DDD8CE] pb-0.5">IGBC AP Member</span>
           </div>
         </div>
       </div>
