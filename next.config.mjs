@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  ...(process.env.BUILD_STANDALONE === "true" ? { output: "standalone" } : {}),
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
