@@ -3,19 +3,35 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Play, Pause } from "lucide-react";
 import { INDIA_PILLARS } from "@/data/studio";
 
 export default function DialogueIndia() {
   const [activeTab, setActiveTab] = useState(INDIA_PILLARS[0].id);
   const [isAutoCycle, setIsAutoCycle] = useState(true);
-  const cycleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!isAutoCycle) return;
+    const el = sectionRef.current;
+    if (!el) return;
 
-    cycleTimerRef.current = setInterval(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoCycle || !isInView) return;
+
+    const timer = setInterval(() => {
+      if (typeof document !== "undefined" && document.hidden) return;
       setActiveTab((prevTab) => {
         const curIdx = INDIA_PILLARS.findIndex((p) => p.id === prevTab);
         const nextIdx = (curIdx + 1) % INDIA_PILLARS.length;
@@ -23,15 +39,13 @@ export default function DialogueIndia() {
       });
     }, 5000);
 
-    return () => {
-      if (cycleTimerRef.current) clearInterval(cycleTimerRef.current);
-    };
-  }, [isAutoCycle]);
+    return () => clearInterval(timer);
+  }, [isAutoCycle, isInView]);
 
   const currentPillar = INDIA_PILLARS.find((p) => p.id === activeTab) || INDIA_PILLARS[0];
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#FBFBFA] border-t border-[#E7E3DA]">
+    <section ref={sectionRef} className="relative py-24 md:py-32 bg-[#FBFBFA] border-t border-[#E7E3DA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E7E3DA]">
@@ -92,10 +106,7 @@ export default function DialogueIndia() {
                 </span>
 
                 {isActive && (
-                  <motion.div
-                    layoutId="active-india-tab"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#9E7D2D]"
-                  />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#9E7D2D]" />
                 )}
               </button>
             );
@@ -107,25 +118,19 @@ export default function DialogueIndia() {
           {/* Left Column: Sketch / Visual Architecture */}
           <div className="lg:col-span-7">
             <div className="relative aspect-[16/10] w-full overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentPillar.id}
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <Image
-                    src={currentPillar.image}
-                    alt={currentPillar.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-transparent to-transparent opacity-80" />
-                </motion.div>
-              </AnimatePresence>
+              <div
+                key={currentPillar.id}
+                className="absolute inset-0 w-full h-full animate-fade-in"
+              >
+                <Image
+                  src={currentPillar.image}
+                  alt={currentPillar.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-transparent to-transparent opacity-80" />
+              </div>
 
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs text-[#757066]">
                 <span className="font-mono uppercase tracking-widest text-[#9E7D2D]">
@@ -138,41 +143,35 @@ export default function DialogueIndia() {
 
           {/* Right Column: Editorial Discourse */}
           <div className="lg:col-span-5 space-y-6">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentPillar.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-4"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono text-[#9E7D2D] uppercase tracking-widest">
-                    Thematic Lens
-                  </span>
-                  <span className="w-6 h-[1px] bg-[#9E7D2D]" />
-                </div>
+            <div
+              key={currentPillar.id}
+              className="space-y-4 animate-fade-in-up"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-mono text-[#9E7D2D] uppercase tracking-widest">
+                  Thematic Lens
+                </span>
+                <span className="w-6 h-[1px] bg-[#9E7D2D]" />
+              </div>
 
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#141311] font-normal leading-tight">
-                  {currentPillar.subhead}
-                </h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#141311] font-normal leading-tight">
+                {currentPillar.subhead}
+              </h3>
 
-                <p className="text-sm text-[#4D4942] leading-relaxed font-light">
-                  {currentPillar.description}
-                </p>
+              <p className="text-sm text-[#4D4942] leading-relaxed font-light">
+                {currentPillar.description}
+              </p>
 
-                <div className="pt-4 border-t border-[#E7E3DA]">
-                  <Link
-                    href={`/dialogue-with-india#${currentPillar.id}`}
-                    className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
-                  >
-                    Read Full Thematic Study
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+              <div className="pt-4 border-t border-[#E7E3DA]">
+                <Link
+                  href={`/dialogue-with-india#${currentPillar.id}`}
+                  className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9E7D2D] hover:text-[#141311] transition-colors"
+                >
+                  Read Full Thematic Study
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

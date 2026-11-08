@@ -3,19 +3,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Play, Pause } from "lucide-react";
 import { SERVICES } from "@/data/studio";
 
 export default function Expertise() {
   const [activeServiceId, setActiveServiceId] = useState(SERVICES[0].id);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Only observe and run timer when visible in viewport
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || !isInView) return;
 
-    autoPlayTimerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
+      if (typeof document !== "undefined" && document.hidden) return;
       setActiveServiceId((prevId) => {
         const currentIndex = SERVICES.findIndex((s) => s.id === prevId);
         const nextIndex = (currentIndex + 1) % SERVICES.length;
@@ -23,15 +40,13 @@ export default function Expertise() {
       });
     }, 4500);
 
-    return () => {
-      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
-    };
-  }, [isAutoPlaying]);
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, isInView]);
 
   const activeService = SERVICES.find((s) => s.id === activeServiceId) || SERVICES[0];
 
   return (
-    <section id="expertise" className="relative py-24 md:py-32 bg-[#FBFBFA]">
+    <section ref={sectionRef} id="expertise" className="relative py-24 md:py-32 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#E7E3DA]">
@@ -123,25 +138,19 @@ export default function Expertise() {
           {/* Right Column: Dynamic Preview Frame with Smooth Transitions */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="relative aspect-[4/3] sm:aspect-[16/12] w-full overflow-hidden border border-[#E7E3DA] bg-[#FFFFFF]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeService.id}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <Image
-                    src={activeService.image}
-                    alt={activeService.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/40 to-transparent" />
-                </motion.div>
-              </AnimatePresence>
+              <div
+                key={activeService.id}
+                className="absolute inset-0 w-full h-full animate-fade-in"
+              >
+                <Image
+                  src={activeService.image}
+                  alt={activeService.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/40 to-transparent" />
+              </div>
 
               {/* Foreground Details Card */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#FBFBFA] via-[#FBFBFA]/90 to-transparent">

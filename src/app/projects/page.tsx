@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { Filter, Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CATEGORIES, PROJECT_IMAGES, ProjectImage } from "@/data/projects";
 import { STUDIO_DATA } from "@/data/studio";
@@ -41,81 +40,85 @@ export default function ProjectsPage() {
   // Keyboard navigation for Lightbox
   useEffect(() => {
     if (lightboxIndex === null) return;
-
-    const onKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose();
       if (e.key === "ArrowLeft") handlePrev();
       if (e.key === "ArrowRight") handleNext();
     };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxIndex, handlePrev, handleNext, handleClose]);
 
-    window.addEventListener("keydown", onKeyDown);
-    document.body.style.overflow = "hidden";
-
+  // Prevent background scrolling when lightbox open
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
     return () => {
-      window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [lightboxIndex, handleClose, handlePrev, handleNext]);
+  }, [lightboxIndex]);
+
+  // Count helper
+  const getCount = (cat: string) => {
+    if (cat === "All") return PROJECT_IMAGES.length;
+    return PROJECT_IMAGES.filter(
+      (img) =>
+        img.category.toLowerCase().includes(cat.toLowerCase()) ||
+        img.category === cat
+    ).length;
+  };
 
   return (
-    <div className="pt-32 pb-28 bg-[#FBFBFA]">
+    <div className="pt-32 pb-28 bg-[#FBFBFA] min-h-screen">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Page Header */}
+        {/* Editorial Header */}
         <div className="mb-12 pb-8 border-b border-[#E7E3DA]">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-[1px] bg-[#9E7D2D]" />
             <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-[#9E7D2D]">
-              Portfolio Archives · Built Works Gallery
+              Studio Portfolio Selection
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#141311] tracking-tight mb-4">
-            Our Projects
-          </h1>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal text-[#141311] tracking-tight">
+                Our Projects
+              </h1>
+              <p className="mt-3 text-sm md:text-base text-[#5E5950] max-w-2xl font-light leading-relaxed">
+                A visual anthology of luxury residences, tertiary healthcare facilities, master plans, and bespoke contemporary interior environments across India.
+              </p>
+            </div>
 
-          <p className="text-sm md:text-base text-[#7A746B] max-w-3xl leading-relaxed">
-            A visual survey of high-rise residential architecture, healthcare campuses, commercial landmarks, MSME industrial master plans, and private waterfront estates across Eastern India.
-          </p>
-
-          {/* Mandatory Attribution Notice */}
-          <div className="mt-6 p-4 bg-[#FAF9F5] border-l-2 border-[#9E7D2D] border border-[#E7E3DA] text-xs text-[#5E5950] max-w-3xl font-sans leading-normal shadow-sm">
-            <strong className="text-[#68635A] uppercase tracking-wider block mb-1">
-              Attribution & Practice History
-            </strong>
-            {STUDIO_DATA.transparencyNote}
+            <div className="text-xs font-mono text-[#827C72] self-start lg:self-end">
+              Displaying <span className="text-[#9E7D2D] font-bold">{filteredImages.length}</span> photographs
+            </div>
           </div>
         </div>
 
-        {/* Filter Categories Bar */}
-        <div className="mb-10">
-          <div className="flex items-center gap-2 mb-3 text-xs font-mono uppercase tracking-widest text-[#827C72]">
-            <Filter className="w-3.5 h-3.5 text-[#9E7D2D]" />
-            <span>Filter by Typology:</span>
-          </div>
+        {/* Typology Filter Bar */}
+        <div className="mb-10 flex items-center gap-2 overflow-x-auto pb-3 scrollbar-thin">
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#827C72] pr-3 border-r border-[#E7E3DA]">
+              <Filter className="w-3.5 h-3.5 text-[#9E7D2D]" />
+              Filter
+            </span>
 
-          <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => {
               const isSelected = selectedCategory === cat;
-              const count =
-                cat === "All"
-                  ? PROJECT_IMAGES.length
-                  : PROJECT_IMAGES.filter(
-                      (img) =>
-                        img.category.toLowerCase().includes(cat.toLowerCase()) ||
-                        img.category === cat
-                    ).length;
+              const count = getCount(cat);
 
               return (
                 <button
                   key={cat}
-                  onClick={() => {
-                    setSelectedCategory(cat);
-                    setLightboxIndex(null);
-                  }}
-                  className={`px-4 py-2 text-xs font-sans uppercase tracking-[0.12em] transition-all duration-300 border shadow-sm flex items-center gap-1.5 ${
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 text-xs font-mono uppercase tracking-wider transition-all duration-200 border flex items-center gap-2 ${
                     isSelected
-                      ? "bg-[#9E7D2D] border-[#9E7D2D] text-white font-semibold"
-                      : "bg-[#FFFFFF] border-[#E7E3DA] text-[#4D4942] hover:text-[#141311] hover:border-[#9E7D2D]"
+                      ? "bg-[#141311] border-[#141311] text-white shadow-sm font-semibold"
+                      : "bg-[#FFFFFF] border-[#E7E3DA] text-[#5E5950] hover:border-[#9E7D2D] hover:text-[#141311]"
                   }`}
                 >
                   <span>{cat}</span>
@@ -129,46 +132,36 @@ export default function ProjectsPage() {
         </div>
 
         {/* Pure Image Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
-        >
-          <AnimatePresence>
-            {filteredImages.map((image, index) => (
-              <motion.div
-                layout
-                key={image.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35 }}
-                onClick={() => setLightboxIndex(index)}
-                className="group relative aspect-[4/3] overflow-hidden bg-[#F2EFE9] border border-[#E7E3DA] cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+          {filteredImages.map((image, index) => (
+            <div
+              key={image.id}
+              onClick={() => setLightboxIndex(index)}
+              className="group relative aspect-[4/3] overflow-hidden bg-[#F2EFE9] border border-[#E7E3DA] cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in"
+            >
+              <Image
+                src={image.src}
+                alt={image.title}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
 
-                {/* Subtle Hover Reveal */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A85C] mb-1">
-                    {image.category}
-                  </span>
-                  <h3 className="text-xs sm:text-sm font-serif font-medium text-[#F7F5F0] line-clamp-2 leading-snug">
-                    {image.title}
-                  </h3>
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-[#F7F5F0]">
-                    <Maximize2 className="w-3.5 h-3.5" />
-                  </div>
+              {/* Subtle Hover Reveal */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A85C] mb-1">
+                  {image.category}
+                </span>
+                <h3 className="text-xs sm:text-sm font-serif font-medium text-[#F7F5F0] line-clamp-2 leading-snug">
+                  {image.title}
+                </h3>
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-[#F7F5F0]">
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {filteredImages.length === 0 && (
           <div className="py-20 text-center text-[#827C72]">

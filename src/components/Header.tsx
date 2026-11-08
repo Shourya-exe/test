@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, X, Phone, Mail } from "lucide-react";
 import { STUDIO_DATA } from "@/data/studio";
 
 const NAV_LINKS = [
@@ -151,143 +150,133 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Off-Canvas Menu Drawer */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-50 flex">
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+      {/* Off-Canvas Menu Drawer (High-performance GPU-composited CSS) */}
+      <div
+        className={`fixed inset-0 z-50 transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        {/* Backdrop */}
+        <div
+          onClick={() => setIsMenuOpen(false)}
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+        />
+
+        {/* Slide-out Menu Panel: Semi-translucent with frosted glass */}
+        <div
+          className={`fixed top-0 right-0 bottom-0 w-full max-w-xl h-full bg-[#FAF9F5]/95 backdrop-blur-xl border-l border-[#DCD6C9] shadow-2xl text-[#141311] flex flex-col justify-between p-8 sm:p-12 overflow-y-auto transition-transform duration-300 ease-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Drawer Top Header */}
+          <div className="flex items-center justify-between border-b border-[#E7E3DA] pb-5">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="RA Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain brightness-0"
+                />
+              </div>
+              <span className="text-[11px] uppercase tracking-[0.24em] text-[#757066] font-medium">
+                Navigation Menu
+              </span>
+            </div>
+            <button
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-            />
-
-            {/* Slide-out Menu Panel: Semi-translucent with frosted glass */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="relative ml-auto w-full max-w-xl h-full bg-[#FAF9F5]/90 backdrop-blur-xl border-l border-[#DCD6C9] shadow-2xl text-[#141311] flex flex-col justify-between p-8 sm:p-12 overflow-y-auto"
+              className="p-2 border border-[#E7E3DA] bg-white/75 hover:bg-[#9E7D2D] text-[#757066] hover:text-white transition-all focus:outline-none"
+              aria-label="Close menu"
             >
-              {/* Drawer Top Header */}
-              <div className="flex items-center justify-between border-b border-[#E7E3DA] pb-5">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <Image
-                      src="/images/logo.png"
-                      alt="RA Logo"
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 object-contain brightness-0"
-                    />
-                  </div>
-                  <span className="text-[11px] uppercase tracking-[0.24em] text-[#757066] font-medium">
-                    Navigation Menu
-                  </span>
-                </div>
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="p-2 border border-[#E7E3DA] bg-white/75 hover:bg-[#9E7D2D] text-[#757066] hover:text-white transition-all focus:outline-none"
-                  aria-label="Close menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Navigation Links with Editorial Numbers */}
-              <nav className="my-8 flex flex-col space-y-3">
-                {NAV_LINKS.map((link, idx) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.04 * idx, duration: 0.3 }}
-                    >
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`group flex items-baseline justify-between py-2.5 border-b border-[#EDE9E1] hover:border-[#9E7D2D]/60 transition-all ${
-                          isActive ? "text-[#9E7D2D]" : "text-[#141311] hover:text-[#9E7D2D]"
-                        }`}
-                      >
-                        <div className="flex items-baseline gap-4">
-                          <span className="text-[11px] font-mono tracking-widest text-[#9E7D2D] font-medium">
-                            {link.number}
-                          </span>
-                          <span className="text-lg sm:text-xl font-serif tracking-wide font-normal group-hover:translate-x-1 transition-transform">
-                            {link.label}
-                          </span>
-                        </div>
-                        <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#9E7D2D]" />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </nav>
-
-              {/* Drawer Footer Information */}
-              <div className="pt-6 border-t border-[#E7E3DA] space-y-4 text-[12px] text-[#757066]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <span className="block uppercase text-[10px] tracking-[0.2em] text-[#9E7D2D] mb-1 font-semibold">
-                      Kolkata Studio
-                    </span>
-                    <p className="text-[11px] leading-relaxed text-[#4D4942]">
-                      86 Golaghata Rd, Lake Town, Kolkata 700048
-                    </p>
-                  </div>
-                  <div>
-                    <span className="block uppercase text-[10px] tracking-[0.2em] text-[#9E7D2D] mb-1 font-semibold">
-                      Bhubaneswar Studio
-                    </span>
-                    <p className="text-[11px] leading-relaxed text-[#4D4942]">
-                      Bhubaneswar, Odisha 751006
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-3 text-[11px] text-[#827C72]">
-                  <div className="flex items-center gap-4">
-                    <a
-                      href="tel:+919836421375"
-                      className="hover:text-[#141311] transition-colors flex items-center gap-1.5 font-medium"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-[#9E7D2D]" />
-                      +91 98364 21375
-                    </a>
-                    <a
-                      href={`mailto:${STUDIO_DATA.generalEmail}`}
-                      className="hover:text-[#141311] transition-colors flex items-center gap-1.5 font-medium"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-[#9E7D2D]" />
-                      Email Us
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    {STUDIO_DATA.socials.map((s) => (
-                      <a
-                        key={s.name}
-                        href={s.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-[#9E7D2D] text-[#4D4942] transition-colors uppercase tracking-widest text-[10px] font-semibold"
-                      >
-                        {s.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              <X className="w-5 h-5" />
+            </button>
           </div>
-        )}
-      </AnimatePresence>
+
+          {/* Navigation Links with Editorial Numbers */}
+          <nav className="my-8 flex flex-col space-y-3">
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <div key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`group flex items-baseline justify-between py-2.5 border-b border-[#EDE9E1] hover:border-[#9E7D2D]/60 transition-all ${
+                      isActive ? "text-[#9E7D2D]" : "text-[#141311] hover:text-[#9E7D2D]"
+                    }`}
+                  >
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-[11px] font-mono tracking-widest text-[#9E7D2D] font-medium">
+                        {link.number}
+                      </span>
+                      <span className="text-lg sm:text-xl font-serif tracking-wide font-normal group-hover:translate-x-1 transition-transform">
+                        {link.label}
+                      </span>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#9E7D2D]" />
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* Drawer Footer Information */}
+          <div className="pt-6 border-t border-[#E7E3DA] space-y-4 text-[12px] text-[#757066]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <span className="block uppercase text-[10px] tracking-[0.2em] text-[#9E7D2D] mb-1 font-semibold">
+                  Kolkata Studio
+                </span>
+                <p className="text-[11px] leading-relaxed text-[#4D4942]">
+                  86 Golaghata Rd, Lake Town, Kolkata 700048
+                </p>
+              </div>
+              <div>
+                <span className="block uppercase text-[10px] tracking-[0.2em] text-[#9E7D2D] mb-1 font-semibold">
+                  Bhubaneswar Studio
+                </span>
+                <p className="text-[11px] leading-relaxed text-[#4D4942]">
+                  Bhubaneswar, Odisha 751006
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-3 text-[11px] text-[#827C72]">
+              <div className="flex items-center gap-4">
+                <a
+                  href="tel:+919836421375"
+                  className="hover:text-[#141311] transition-colors flex items-center gap-1.5 font-medium"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#9E7D2D]" />
+                  +91 98364 21375
+                </a>
+                <a
+                  href={`mailto:${STUDIO_DATA.generalEmail}`}
+                  className="hover:text-[#141311] transition-colors flex items-center gap-1.5 font-medium"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#9E7D2D]" />
+                  Email Us
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                {STUDIO_DATA.socials.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-[#9E7D2D] text-[#4D4942] transition-colors uppercase tracking-widest text-[10px] font-semibold"
+                  >
+                    {s.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

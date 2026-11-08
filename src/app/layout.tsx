@@ -64,18 +64,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable} light`}>
-      <head>
-        <meta
-          name="description"
-          content="Buildings shaped by climate, city, and the people who use them. High-end luxury residences, healthcare complexes, master planning, and sustainable architecture across Kolkata and Bhubaneswar."
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/all-images/img-1.jpg"
-          fetchPriority="high"
-        />
-      </head>
       <body className="min-h-screen bg-[#FBFBFA] text-[#141311] flex flex-col antialiased selection:bg-[#9E7D2D] selection:text-white">
         <Header />
         <main className="flex-1 w-full">{children}</main>
