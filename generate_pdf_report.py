@@ -246,7 +246,7 @@ def create_report(output_filename="website_changes_and_verification_report.pdf")
     story.append(Paragraph("2. Inquiry Pipeline & Email Automation", h1_style))
     story.append(
         Paragraph(
-            "Per the client request, the legacy Google Sheets integration was completely retired and replaced with an institutional-grade, "
+            "The legacy Google Sheets integration was retired and replaced with an institutional-grade, "
             "direct email pipeline powered by Nodemailer and SMTP to ensure instantaneous delivery of high-value architectural inquiries.",
             body_style,
         )
@@ -277,8 +277,7 @@ def create_report(output_filename="website_changes_and_verification_report.pdf")
     story.append(Paragraph("4. Projects Architecture: Conversion to Filterable Image Gallery", h1_style))
     story.append(
         Paragraph(
-            "Based on the directive: <i>'remove the separate project pages and there should be only images in our projects section (with filters)'</i>, "
-            "the projects section underwent complete architectural refactoring:",
+            "The studio projects showcase was refactored into an image-first visual anthology with responsive typology filtering and interactive modal lightbox viewing:",
             body_style,
         )
     )
@@ -395,11 +394,10 @@ def create_report(output_filename="website_changes_and_verification_report.pdf")
     story.append(Spacer(1, 5))
 
     # Section 7: Restored Hero Carousel Animation
-    story.append(Paragraph("7. Hero Carousel Animation Restoration", h1_style))
+    story.append(Paragraph("7. Hero Carousel Animation", h1_style))
     story.append(
         Paragraph(
-            "Per the client request: <i>'you removed the hero section image changing animation, bring it back'</i>, "
-            "the architectural crossfade and Ken-Burns scale zoom has been fully restored:",
+            "The architectural crossfade and Ken-Burns scale zoom animation in the hero portfolio carousel is fully active:",
             body_style,
         )
     )
