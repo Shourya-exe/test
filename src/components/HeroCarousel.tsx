@@ -345,10 +345,10 @@ export default function HeroCarousel() {
               >
                 {/* Primary Button with Live Shimmer Effect */}
                 <Link
-                  href={`/projects/${currentSlide.projectSlug}`}
+                  href="/projects"
                   className="relative group overflow-hidden px-6 py-3.5 bg-[#141311] text-white text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#9E7D2D] shadow-md flex items-center gap-3"
                 >
-                  <span className="relative z-10 text-white">Explore Project</span>
+                  <span className="relative z-10 text-white">Explore Projects</span>
                   <ArrowRight className="w-4 h-4 relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1.5" />
 
                   {/* Continuous Sheen Sweep Animation */}

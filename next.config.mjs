@@ -14,6 +14,13 @@ const nextConfig = {
     minimumCacheTTL: 31536000,
     qualities: [75, 80, 85, 90],
   },
+  redirects: async () => [
+    {
+      source: "/net-positive",
+      destination: "/beyond-sustainability",
+      permanent: true,
+    },
+  ],
   headers: async () => [
     {
       source: "/:all*(svg|jpg|jpeg|png|webp|avif|mp4|woff|woff2)",

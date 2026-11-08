@@ -579,3 +579,26 @@ export const CATEGORIES = [
   "Residential: housing",
   "Villas"
 ];
+
+export interface ProjectImage {
+  id: string;
+  src: string;
+  title: string;
+  category: string;
+  categorySlug: string;
+  location: string;
+  projectId: string;
+}
+
+export const PROJECT_IMAGES: ProjectImage[] = PROJECTS.flatMap((project) => {
+  const images = Array.from(new Set([project.coverImage, ...project.gallery].filter(Boolean)));
+  return images.map((src, index) => ({
+    id: `${project.id}-${index + 1}`,
+    src,
+    title: project.title,
+    category: project.category,
+    categorySlug: project.categorySlug,
+    location: project.location,
+    projectId: project.id,
+  }));
+});

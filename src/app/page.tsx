@@ -65,7 +65,7 @@ export default function HomePage() {
             {featuredProjects.map((project) => (
               <Link
                 key={project.id}
-                href={`/projects/${project.slug}`}
+                href="/projects"
                 className="group flex flex-col justify-between border border-[#E7E3DA] bg-white overflow-hidden transition-all duration-500 hover:border-[#9E7D2D]/60 shadow-sm hover:shadow-md"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#FBFBFA]">
@@ -97,7 +97,7 @@ export default function HomePage() {
                   </p>
 
                   <div className="pt-2 flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-[#9E7D2D] group-hover:text-[#141311] transition-colors">
-                    View Project
+                    View in Gallery
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>

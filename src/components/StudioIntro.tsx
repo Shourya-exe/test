@@ -113,11 +113,11 @@ export default function StudioIntro() {
                   </h3>
                 </div>
                 <Link
-                  href="/projects/the-duet-ballygunge"
+                  href="/projects"
                   className="px-3.5 py-1.5 bg-[#FBFBFA]/90 backdrop-blur-sm border border-[#9E7D2D]/60 text-[10px] uppercase tracking-widest text-[#141311] hover:bg-[#9E7D2D] hover:text-[#FBFBFA] transition-colors"
-                  aria-label="View Luxury 16 Storey Residency project details"
+                  aria-label="View Luxury 16 Storey Residency in project gallery"
                 >
-                  View Details
+                  View in Gallery
                 </Link>
               </div>
             </div>
